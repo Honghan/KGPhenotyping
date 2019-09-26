@@ -1,8 +1,10 @@
 package ac.uk.hdruk.graph;
 
+import java.io.File;
 import java.io.IOException;
 
 import org.apache.commons.configuration2.ex.ConfigurationException;
+import org.apache.commons.io.FileUtils;
 import org.semanticweb.owlapi.io.ToStringRenderer;
 import org.semanticweb.owlapi.model.OWLException;
 import org.semanticweb.owlapi.model.OWLObject;
@@ -87,14 +89,15 @@ public class GeneratedMappingTester {
 		try {
 			OntologyPhenotyping op = OntologyPhenotyping.getInstance(configFile);
 			String studyName = "t2dm";
-			String ruleJSON = "{\r\n" + 
-					"	\"t1-t2-exclusive\": \"E11(?x) ^ E10(?x) -> DiabetesConflictPatient(?x)\"}";
+			
+			// load manual rules
+			String rules = FileUtils.readFileToString(new File("src/main/resources/lab/test/swrl-rules/t2dm-rules.json"));
 						
 			// 1. initialise a study with its own rules (rules can be null or empty)
 			// the following create/update function only needs to run once
 			try {
 //				op.createUpdateStudy(studyName, null);
-				op.createUpdateStudy(studyName, ruleJSON);
+				op.createUpdateStudy(studyName, rules);
 			} catch (SWRLParseException | SWRLBuiltInException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
