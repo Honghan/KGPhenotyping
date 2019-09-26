@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.util.Scanner;
 
 import org.apache.commons.io.FileUtils;
-import org.semanticweb.ontop.examples.QuestOWLExample;
 import org.semanticweb.owlapi.io.ToStringRenderer;
 import org.semanticweb.owlapi.model.OWLObject;
 
