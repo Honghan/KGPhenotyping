@@ -1,0 +1,338 @@
+@prefix : <http://www.semanticweb.org/ubuntu/ontologies/2019/5/untitled-ontology-17#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obda: <https://w3id.org/obda/vocabulary#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/ubuntu/ontologies/2019/5/untitled-ontology-17> .
+
+<http://www.semanticweb.org/ubuntu/ontologies/2019/5/untitled-ontology-17> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/ubuntu/ontologies/2019/5/untitled-ontology-17#OWLObjectProperty_0b3d5fa9_8f91_4c11_839e_03d28f2471d1
+:OWLObjectProperty_0b3d5fa9_8f91_4c11_839e_03d28f2471d1 rdf:type owl:ObjectProperty ;
+                                                        owl:inverseOf :OWLObjectProperty_bd08063b_7276_4f5a_9c38_19403921a833 ;
+                                                        rdf:type owl:FunctionalProperty ,
+                                                                 owl:InverseFunctionalProperty ;
+                                                        rdfs:domain :OWLClass_6d7c00c0_dbf6_404c_9197_5710c018812e ;
+                                                        rdfs:range :OWLClass_fc759d71_90f7_4a59_9e36_0bd2452fb467 ;
+                                                        rdfs:label "recordOf"@en .
+
+
+###  http://www.semanticweb.org/ubuntu/ontologies/2019/5/untitled-ontology-17#OWLObjectProperty_43805d80_cd0c_412d_9121_20e4e0d38ecb
+:OWLObjectProperty_43805d80_cd0c_412d_9121_20e4e0d38ecb rdf:type owl:ObjectProperty ;
+                                                        owl:inverseOf :OWLObjectProperty_9673cc15_ebd0_47b1_98cb_757b6c98ad75 ;
+                                                        rdf:type owl:InverseFunctionalProperty ;
+                                                        rdfs:domain :OWLClass_798078e6_d2b3_4b16_8d2c_93c9474b60b4 ;
+                                                        rdfs:range :OWLClass_fc759d71_90f7_4a59_9e36_0bd2452fb467 ;
+                                                        rdfs:label "providedBy"@en .
+
+
+###  http://www.semanticweb.org/ubuntu/ontologies/2019/5/untitled-ontology-17#OWLObjectProperty_66498bfd_3add_43ae_ba3e_6878e7e2a692
+:OWLObjectProperty_66498bfd_3add_43ae_ba3e_6878e7e2a692 rdf:type owl:ObjectProperty ;
+                                                        owl:inverseOf :OWLObjectProperty_9446a7d9_fa1f_4ef0_877b_9ac3575a5dfd ;
+                                                        rdf:type owl:InverseFunctionalProperty ;
+                                                        rdfs:domain :OWLClass_fc759d71_90f7_4a59_9e36_0bd2452fb467 ;
+                                                        rdfs:range :OWLClass_b7891086_5555_4cae_b4b4_ec36baf541ce ;
+                                                        rdfs:label "useDrug"@en .
+
+
+###  http://www.semanticweb.org/ubuntu/ontologies/2019/5/untitled-ontology-17#OWLObjectProperty_6b08d6eb_65d9_4215_aedc_d5b190d2f49e
+:OWLObjectProperty_6b08d6eb_65d9_4215_aedc_d5b190d2f49e rdf:type owl:ObjectProperty ;
+                                                        owl:inverseOf :OWLObjectProperty_870b0172_6b83_4b6d_8f2f_a81ca26fc205 ;
+                                                        rdf:type owl:InverseFunctionalProperty ;
+                                                        rdfs:domain :OWLClass_33d889fc_14a8_4ccb_8096_5c35f516d9d3 ;
+                                                        rdfs:range :OWLClass_798078e6_d2b3_4b16_8d2c_93c9474b60b4 ;
+                                                        rdfs:label "basedOnSample"@en .
+
+
+###  http://www.semanticweb.org/ubuntu/ontologies/2019/5/untitled-ontology-17#OWLObjectProperty_870b0172_6b83_4b6d_8f2f_a81ca26fc205
+:OWLObjectProperty_870b0172_6b83_4b6d_8f2f_a81ca26fc205 rdf:type owl:ObjectProperty ,
+                                                                 owl:InverseFunctionalProperty ;
+                                                        rdfs:domain :OWLClass_798078e6_d2b3_4b16_8d2c_93c9474b60b4 ;
+                                                        rdfs:range :OWLClass_33d889fc_14a8_4ccb_8096_5c35f516d9d3 ;
+                                                        rdfs:label "contributeToTest"@en .
+
+
+###  http://www.semanticweb.org/ubuntu/ontologies/2019/5/untitled-ontology-17#OWLObjectProperty_9446a7d9_fa1f_4ef0_877b_9ac3575a5dfd
+:OWLObjectProperty_9446a7d9_fa1f_4ef0_877b_9ac3575a5dfd rdf:type owl:ObjectProperty ,
+                                                                 owl:InverseFunctionalProperty ;
+                                                        rdfs:domain :OWLClass_b7891086_5555_4cae_b4b4_ec36baf541ce ;
+                                                        rdfs:range :OWLClass_fc759d71_90f7_4a59_9e36_0bd2452fb467 ;
+                                                        rdfs:label "usedBy"@en .
+
+
+###  http://www.semanticweb.org/ubuntu/ontologies/2019/5/untitled-ontology-17#OWLObjectProperty_9673cc15_ebd0_47b1_98cb_757b6c98ad75
+:OWLObjectProperty_9673cc15_ebd0_47b1_98cb_757b6c98ad75 rdf:type owl:ObjectProperty ,
+                                                                 owl:InverseFunctionalProperty ;
+                                                        rdfs:domain :OWLClass_fc759d71_90f7_4a59_9e36_0bd2452fb467 ;
+                                                        rdfs:range :OWLClass_798078e6_d2b3_4b16_8d2c_93c9474b60b4 ;
+                                                        rdfs:label "giveSample"@en .
+
+
+###  http://www.semanticweb.org/ubuntu/ontologies/2019/5/untitled-ontology-17#OWLObjectProperty_a9a33ee4_c7a4_487e_8cae_b2aba5a72003
+:OWLObjectProperty_a9a33ee4_c7a4_487e_8cae_b2aba5a72003 rdf:type owl:ObjectProperty ;
+                                                        owl:inverseOf :OWLObjectProperty_d37d17ce_a61e_4324_9a55_2a970a59f410 ;
+                                                        rdf:type owl:FunctionalProperty ,
+                                                                 owl:InverseFunctionalProperty ;
+                                                        rdfs:domain :OWLClass_33d889fc_14a8_4ccb_8096_5c35f516d9d3 ;
+                                                        rdfs:range :OWLClass_bf492c55_02a2_4f8b_a461_d879fdfbf6dd ;
+                                                        rdfs:label "leadToResult"@en .
+
+
+###  http://www.semanticweb.org/ubuntu/ontologies/2019/5/untitled-ontology-17#OWLObjectProperty_bd08063b_7276_4f5a_9c38_19403921a833
+:OWLObjectProperty_bd08063b_7276_4f5a_9c38_19403921a833 rdf:type owl:ObjectProperty ,
+                                                                 owl:InverseFunctionalProperty ;
+                                                        rdfs:domain :OWLClass_fc759d71_90f7_4a59_9e36_0bd2452fb467 ;
+                                                        rdfs:range :OWLClass_6d7c00c0_dbf6_404c_9197_5710c018812e ;
+                                                        rdfs:label "hasRecord"@en .
+
+
+###  http://www.semanticweb.org/ubuntu/ontologies/2019/5/untitled-ontology-17#OWLObjectProperty_d37d17ce_a61e_4324_9a55_2a970a59f410
+:OWLObjectProperty_d37d17ce_a61e_4324_9a55_2a970a59f410 rdf:type owl:ObjectProperty ,
+                                                                 owl:FunctionalProperty ,
+                                                                 owl:InverseFunctionalProperty ;
+                                                        rdfs:domain :OWLClass_bf492c55_02a2_4f8b_a461_d879fdfbf6dd ;
+                                                        rdfs:range :OWLClass_33d889fc_14a8_4ccb_8096_5c35f516d9d3 ;
+                                                        rdfs:label "fromTest"@en .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/ubuntu/ontologies/2019/5/untitled-ontology-17#OWLDataProperty_0521c1ab_c6ff_4dc3_bbce_3d81c30daaf5
+:OWLDataProperty_0521c1ab_c6ff_4dc3_bbce_3d81c30daaf5 rdf:type owl:DatatypeProperty ,
+                                                               owl:FunctionalProperty ;
+                                                      rdfs:domain :OWLClass_798078e6_d2b3_4b16_8d2c_93c9474b60b4 ;
+                                                      rdfs:range xsd:dateTime ;
+                                                      rdfs:label "sampleDate"@en .
+
+
+###  http://www.semanticweb.org/ubuntu/ontologies/2019/5/untitled-ontology-17#OWLDataProperty_2f04e4ca_ed0e_4c3e_8cf3_b34dbb05c080
+:OWLDataProperty_2f04e4ca_ed0e_4c3e_8cf3_b34dbb05c080 rdf:type owl:DatatypeProperty ,
+                                                               owl:FunctionalProperty ;
+                                                      rdfs:domain :OWLClass_b7891086_5555_4cae_b4b4_ec36baf541ce ;
+                                                      rdfs:range rdfs:Literal ;
+                                                      rdfs:comment "PI BNF item code" ;
+                                                      rdfs:label "drugItemCode"@en .
+
+
+###  http://www.semanticweb.org/ubuntu/ontologies/2019/5/untitled-ontology-17#OWLDataProperty_503713ed_0a1b_4acc_99ff_f9dadc8ad308
+:OWLDataProperty_503713ed_0a1b_4acc_99ff_f9dadc8ad308 rdf:type owl:DatatypeProperty ,
+                                                               owl:FunctionalProperty ;
+                                                      rdfs:domain :OWLClass_33d889fc_14a8_4ccb_8096_5c35f516d9d3 ;
+                                                      rdfs:range rdfs:Literal ;
+                                                      owl:propertyDisjointWith :OWLDataProperty_b564ba04_2699_470f_9448_46636c98c518 ;
+                                                      rdfs:comment "Clinical code" ;
+                                                      rdfs:label "readCode"@en .
+
+
+###  http://www.semanticweb.org/ubuntu/ontologies/2019/5/untitled-ontology-17#OWLDataProperty_5bb6e0f6_f89f_4060_b953_60efe407ab9f
+:OWLDataProperty_5bb6e0f6_f89f_4060_b953_60efe407ab9f rdf:type owl:DatatypeProperty ,
+                                                               owl:FunctionalProperty ;
+                                                      rdfs:domain :OWLClass_798078e6_d2b3_4b16_8d2c_93c9474b60b4 ;
+                                                      rdfs:range rdfs:Literal ;
+                                                      rdfs:comment "tissue type" ;
+                                                      rdfs:label "sampleType"@en .
+
+
+###  http://www.semanticweb.org/ubuntu/ontologies/2019/5/untitled-ontology-17#OWLDataProperty_6ebeccb5_20b5_406c_b61b_bf81c22b1e0f
+:OWLDataProperty_6ebeccb5_20b5_406c_b61b_bf81c22b1e0f rdf:type owl:DatatypeProperty ,
+                                                               owl:FunctionalProperty ;
+                                                      rdfs:domain :OWLClass_bf492c55_02a2_4f8b_a461_d879fdfbf6dd ;
+                                                      rdfs:range xsd:float ;
+                                                      rdfs:label "quantityValue"@en .
+
+
+###  http://www.semanticweb.org/ubuntu/ontologies/2019/5/untitled-ontology-17#OWLDataProperty_80854afe_f848_411b_9ea5_08a55f9df4d6
+:OWLDataProperty_80854afe_f848_411b_9ea5_08a55f9df4d6 rdf:type owl:DatatypeProperty ;
+                                                      rdfs:domain [ rdf:type owl:Restriction ;
+                                                                    owl:onProperty :OWLObjectProperty_66498bfd_3add_43ae_ba3e_6878e7e2a692 ;
+                                                                    owl:allValuesFrom :OWLClass_b7891086_5555_4cae_b4b4_ec36baf541ce
+                                                                  ] ;
+                                                      rdfs:range xsd:dateTime ;
+                                                      rdfs:comment "One drug is used by one patient on a given date." ;
+                                                      rdfs:label "dateDsipensed"@en .
+
+
+###  http://www.semanticweb.org/ubuntu/ontologies/2019/5/untitled-ontology-17#OWLDataProperty_908896c9_dc3d_4821_a4fd_f077629a616f
+:OWLDataProperty_908896c9_dc3d_4821_a4fd_f077629a616f rdf:type owl:DatatypeProperty ,
+                                                               owl:FunctionalProperty ;
+                                                      rdfs:domain :OWLClass_bf492c55_02a2_4f8b_a461_d879fdfbf6dd ;
+                                                      rdfs:range rdfs:Literal ;
+                                                      rdfs:label "quantityUnit"@en .
+
+
+###  http://www.semanticweb.org/ubuntu/ontologies/2019/5/untitled-ontology-17#OWLDataProperty_b0fb800a_88fe_446c_a454_3e3b38c2c54c
+:OWLDataProperty_b0fb800a_88fe_446c_a454_3e3b38c2c54c rdf:type owl:DatatypeProperty ,
+                                                               owl:FunctionalProperty ;
+                                                      rdfs:domain :OWLClass_6d7c00c0_dbf6_404c_9197_5710c018812e ;
+                                                      rdfs:range rdfs:Literal ;
+                                                      rdfs:comment "unique record identifier" ;
+                                                      rdfs:label "recordIdentifier"@en .
+
+
+###  http://www.semanticweb.org/ubuntu/ontologies/2019/5/untitled-ontology-17#OWLDataProperty_b564ba04_2699_470f_9448_46636c98c518
+:OWLDataProperty_b564ba04_2699_470f_9448_46636c98c518 rdf:type owl:DatatypeProperty ;
+                                                      rdfs:domain :OWLClass_33d889fc_14a8_4ccb_8096_5c35f516d9d3 ;
+                                                      rdfs:range rdfs:Literal ;
+                                                      rdfs:comment "local clinical code" ;
+                                                      rdfs:label "testCode"@en .
+
+
+###  http://www.semanticweb.org/ubuntu/ontologies/2019/5/untitled-ontology-17#OWLDataProperty_be61b161_1fc0_4e70_ba0f_f01c260ab06c
+:OWLDataProperty_be61b161_1fc0_4e70_ba0f_f01c260ab06c rdf:type owl:DatatypeProperty ;
+                                                      rdfs:domain :OWLClass_fc759d71_90f7_4a59_9e36_0bd2452fb467 ;
+                                                      rdfs:range rdfs:Literal ;
+                                                      rdfs:label "healthBoard"@en .
+
+
+###  http://www.semanticweb.org/ubuntu/ontologies/2019/5/untitled-ontology-17#OWLDataProperty_f1fc55ba_68a5_4929_8be3_295ae8e7dd13
+:OWLDataProperty_f1fc55ba_68a5_4929_8be3_295ae8e7dd13 rdf:type owl:DatatypeProperty ,
+                                                               owl:FunctionalProperty ;
+                                                      rdfs:domain :OWLClass_6d7c00c0_dbf6_404c_9197_5710c018812e ;
+                                                      rdfs:range rdfs:Literal ;
+                                                      owl:propertyDisjointWith :OWLDataProperty_f9c1e103_ce4b_450d_84c2_d0f3b252ff5e ;
+                                                      rdfs:comment "The code of the main condition in the mobidity record." ;
+                                                      rdfs:label "mainCondition"@en .
+
+
+###  http://www.semanticweb.org/ubuntu/ontologies/2019/5/untitled-ontology-17#OWLDataProperty_f5329180_5846_48ff_8981_c48fa1cdf4ff
+:OWLDataProperty_f5329180_5846_48ff_8981_c48fa1cdf4ff rdf:type owl:DatatypeProperty ;
+                                                      rdfs:domain :OWLClass_b7891086_5555_4cae_b4b4_ec36baf541ce ;
+                                                      rdfs:range rdfs:Literal ;
+                                                      rdfs:comment "PI approved Name" ;
+                                                      rdfs:label "drugName"@en .
+
+
+###  http://www.semanticweb.org/ubuntu/ontologies/2019/5/untitled-ontology-17#OWLDataProperty_f9c1e103_ce4b_450d_84c2_d0f3b252ff5e
+:OWLDataProperty_f9c1e103_ce4b_450d_84c2_d0f3b252ff5e rdf:type owl:DatatypeProperty ;
+                                                      rdfs:domain :OWLClass_6d7c00c0_dbf6_404c_9197_5710c018812e ;
+                                                      rdfs:range rdfs:Literal ;
+                                                      rdfs:label "otherCondition"@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/ubuntu/ontologies/2019/5/untitled-ontology-17#OWLClass_33d889fc_14a8_4ccb_8096_5c35f516d9d3
+:OWLClass_33d889fc_14a8_4ccb_8096_5c35f516d9d3 rdf:type owl:Class ;
+                                               rdfs:label "Tests"@en .
+
+
+###  http://www.semanticweb.org/ubuntu/ontologies/2019/5/untitled-ontology-17#OWLClass_6d7c00c0_dbf6_404c_9197_5710c018812e
+:OWLClass_6d7c00c0_dbf6_404c_9197_5710c018812e rdf:type owl:Class ;
+                                               rdfs:label "Records"@en .
+
+
+###  http://www.semanticweb.org/ubuntu/ontologies/2019/5/untitled-ontology-17#OWLClass_6fb7f544_10f1_42fb_aabe_c3451a7cb710
+:OWLClass_6fb7f544_10f1_42fb_aabe_c3451a7cb710 rdf:type owl:Class ;
+                                               rdfs:subClassOf :OWLClass_94ef4eb7_e3ad_4121_86d5_bf78b984b45e ;
+                                               rdfs:label "OtherMajorBleed"@en .
+
+
+###  http://www.semanticweb.org/ubuntu/ontologies/2019/5/untitled-ontology-17#OWLClass_798078e6_d2b3_4b16_8d2c_93c9474b60b4
+:OWLClass_798078e6_d2b3_4b16_8d2c_93c9474b60b4 rdf:type owl:Class ;
+                                               rdfs:label "Samples"@en .
+
+
+###  http://www.semanticweb.org/ubuntu/ontologies/2019/5/untitled-ontology-17#OWLClass_7c5f3890_456a_4339_9488_7b4e3922eec3
+:OWLClass_7c5f3890_456a_4339_9488_7b4e3922eec3 rdf:type owl:Class ;
+                                               owl:equivalentClass [ rdf:type owl:Class ;
+                                                                     owl:unionOf ( [ rdf:type owl:Restriction ;
+                                                                                     owl:onProperty :OWLDataProperty_f1fc55ba_68a5_4929_8be3_295ae8e7dd13 ;
+                                                                                     owl:hasValue "I60"
+                                                                                   ]
+                                                                                   [ rdf:type owl:Restriction ;
+                                                                                     owl:onProperty :OWLDataProperty_f1fc55ba_68a5_4929_8be3_295ae8e7dd13 ;
+                                                                                     owl:hasValue "I61"
+                                                                                   ]
+                                                                                   [ rdf:type owl:Restriction ;
+                                                                                     owl:onProperty :OWLDataProperty_f9c1e103_ce4b_450d_84c2_d0f3b252ff5e ;
+                                                                                     owl:hasValue "I60"
+                                                                                   ]
+                                                                                   [ rdf:type owl:Restriction ;
+                                                                                     owl:onProperty :OWLDataProperty_f9c1e103_ce4b_450d_84c2_d0f3b252ff5e ;
+                                                                                     owl:hasValue "I61"
+                                                                                   ]
+                                                                                 )
+                                                                   ] ;
+                                               rdfs:subClassOf :OWLClass_94ef4eb7_e3ad_4121_86d5_bf78b984b45e ;
+                                               rdfs:label "HaemorrhagicStroke"@en .
+
+
+###  http://www.semanticweb.org/ubuntu/ontologies/2019/5/untitled-ontology-17#OWLClass_94ef4eb7_e3ad_4121_86d5_bf78b984b45e
+:OWLClass_94ef4eb7_e3ad_4121_86d5_bf78b984b45e rdf:type owl:Class ;
+                                               owl:equivalentClass [ rdf:type owl:Class ;
+                                                                     owl:unionOf ( :OWLClass_6fb7f544_10f1_42fb_aabe_c3451a7cb710
+                                                                                   :OWLClass_7c5f3890_456a_4339_9488_7b4e3922eec3
+                                                                                   :OWLClass_fb6af317_3c61_410e_ac48_2c5910d4b347
+                                                                                 )
+                                                                   ] ;
+                                               rdfs:subClassOf :OWLClass_6d7c00c0_dbf6_404c_9197_5710c018812e ;
+                                               rdfs:label "BleedingEvent"@en .
+
+
+###  http://www.semanticweb.org/ubuntu/ontologies/2019/5/untitled-ontology-17#OWLClass_b7891086_5555_4cae_b4b4_ec36baf541ce
+:OWLClass_b7891086_5555_4cae_b4b4_ec36baf541ce rdf:type owl:Class ;
+                                               rdfs:label "Drugs"@en .
+
+
+###  http://www.semanticweb.org/ubuntu/ontologies/2019/5/untitled-ontology-17#OWLClass_bf492c55_02a2_4f8b_a461_d879fdfbf6dd
+:OWLClass_bf492c55_02a2_4f8b_a461_d879fdfbf6dd rdf:type owl:Class ;
+                                               rdfs:label "Results"@en .
+
+
+###  http://www.semanticweb.org/ubuntu/ontologies/2019/5/untitled-ontology-17#OWLClass_d4bc4a45_743c_4bd8_8075_8e821d67753f
+:OWLClass_d4bc4a45_743c_4bd8_8075_8e821d67753f rdf:type owl:Class ;
+                                               owl:equivalentClass [ rdf:type owl:Class ;
+                                                                     owl:unionOf ( [ rdf:type owl:Restriction ;
+                                                                                     owl:onProperty :OWLDataProperty_f1fc55ba_68a5_4929_8be3_295ae8e7dd13 ;
+                                                                                     owl:hasValue "I63"
+                                                                                   ]
+                                                                                   [ rdf:type owl:Restriction ;
+                                                                                     owl:onProperty :OWLDataProperty_f1fc55ba_68a5_4929_8be3_295ae8e7dd13 ;
+                                                                                     owl:hasValue "I64"
+                                                                                   ]
+                                                                                   [ rdf:type owl:Restriction ;
+                                                                                     owl:onProperty :OWLDataProperty_f9c1e103_ce4b_450d_84c2_d0f3b252ff5e ;
+                                                                                     owl:hasValue "I63"
+                                                                                   ]
+                                                                                   [ rdf:type owl:Restriction ;
+                                                                                     owl:onProperty :OWLDataProperty_f9c1e103_ce4b_450d_84c2_d0f3b252ff5e ;
+                                                                                     owl:hasValue "I64"
+                                                                                   ]
+                                                                                 )
+                                                                   ] ;
+                                               rdfs:subClassOf :OWLClass_6d7c00c0_dbf6_404c_9197_5710c018812e ;
+                                               rdfs:label "ThromboticStroke"@en .
+
+
+###  http://www.semanticweb.org/ubuntu/ontologies/2019/5/untitled-ontology-17#OWLClass_d9654630_c4d5_429e_ae7a_cae1e13acde3
+:OWLClass_d9654630_c4d5_429e_ae7a_cae1e13acde3 rdf:type owl:Class ;
+                                               owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                                     owl:onProperty :OWLObjectProperty_66498bfd_3add_43ae_ba3e_6878e7e2a692 ;
+                                                                     owl:someValuesFrom :OWLClass_b7891086_5555_4cae_b4b4_ec36baf541ce
+                                                                   ] ;
+                                               rdfs:subClassOf :OWLClass_fc759d71_90f7_4a59_9e36_0bd2452fb467 ;
+                                               rdfs:label "DrugUsers"@en .
+
+
+###  http://www.semanticweb.org/ubuntu/ontologies/2019/5/untitled-ontology-17#OWLClass_fb6af317_3c61_410e_ac48_2c5910d4b347
+:OWLClass_fb6af317_3c61_410e_ac48_2c5910d4b347 rdf:type owl:Class ;
+                                               rdfs:subClassOf :OWLClass_94ef4eb7_e3ad_4121_86d5_bf78b984b45e ;
+                                               rdfs:label "GastroIntestinalBleeding"@en .
+
+
+###  http://www.semanticweb.org/ubuntu/ontologies/2019/5/untitled-ontology-17#OWLClass_fc759d71_90f7_4a59_9e36_0bd2452fb467
+:OWLClass_fc759d71_90f7_4a59_9e36_0bd2452fb467 rdf:type owl:Class ;
+                                               rdfs:label "Patients"@en .
+
+
+###  Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi

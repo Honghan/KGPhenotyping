@@ -1,0 +1,21 @@
+[PrefixDeclaration]
+:			http://www.hdruk.ac.uk/sprint/graph/
+onto:		http://www.hdruk.ac.uk/sprint/graph/ontology/
+owl:		http://www.w3.org/2002/07/owl#
+rdf:		http://www.w3.org/1999/02/22-rdf-syntax-ns#
+xml:		http://www.w3.org/XML/1998/namespace
+xsd:		http://www.w3.org/2001/XMLSchema#
+obda:		https://w3id.org/obda/vocabulary#
+rdfs:		http://www.w3.org/2000/01/rdf-schema#
+
+[MappingDeclaration] @collection [[
+mappingId	conditions
+target		:patient/{CHI} a onto:Patient ; a onto:{cleanCondition} ; onto:hasDiag :diag/{CHI}_{cleanCondition}_{AdmissionDate}; onto:hasICD10Code {MainCondition} . :diag/{CHI}_{cleanCondition}_{AdmissionDate} a onto:ICD/{MainCondition}; onto:hasCondition onto:ICD/{MainCondition} ; onto:admissionDate {AdmissionDate}.
+source		select *, replace(MainCondition, ' ', '') cleanCondition from HospitalAdmissions
+
+mappingId	druguse
+target		:patient/{CHI} onto:hasPrescription :prescription/{CHI}_{BnfCode}_{PrescribedDate} . :prescription/{CHI}_{BnfCode}_{PrescribedDate} onto:prescribedDrug :drug/{BnfCode} ; onto:prescribedDate {PrescribedDate} . :drug/{BnfCode} onto:drugName {Name} .
+source		select CHI, Name, PrescribedDate, BnfCode from Prescription
+
+]]
+

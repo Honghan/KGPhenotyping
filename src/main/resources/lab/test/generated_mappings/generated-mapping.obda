@@ -1,0 +1,31 @@
+[PrefixDeclaration]
+:			http://www.hdruk.ac.uk/sprint/graph/
+onto:		http://www.hdruk.ac.uk/sprint/graph/ontology/
+owl:		http://www.w3.org/2002/07/owl#
+rdf:		http://www.w3.org/1999/02/22-rdf-syntax-ns#
+xml:		http://www.w3.org/XML/1998/namespace
+xsd:		http://www.w3.org/2001/XMLSchema#
+obda:		https://w3id.org/obda/vocabulary#
+rdfs:		http://www.w3.org/2000/01/rdf-schema#
+
+[MappingDeclaration] @collection [[
+mappingId	conditions
+target		:patient/{CHI} a onto:Patient ; a onto:{cleanCondition} ; onto:hasDiag :diag/{CHI}_{cleanCondition}_{AdmissionDate}; onto:hasICD10Code {MainCondition} . :diag/{CHI}_{cleanCondition}_{AdmissionDate} a onto:ICD/{MainCondition}; onto:hasCondition onto:ICD/{MainCondition} ; onto:admissionDate {AdmissionDate}.
+source		select *, replace(MainCondition, ' ', '') cleanCondition from HospitalAdmissions
+
+mappingId	druguse
+target		:patient/{CHI} onto:hasPrescription :prescription/{CHI}_{BnfCode}_{PrescribedDate} . :prescription/{CHI}_{BnfCode}_{PrescribedDate} onto:prescribedDrug :drug/{BnfCode} ; onto:prescribedDate {PrescribedDate} . :drug/{BnfCode} onto:drugName {Name} .
+source		select CHI, Name, PrescribedDate, BnfCode from Prescription
+
+
+
+mappingId	t1-t2-exclusive
+target		{x} a <http://www.hdruk.ac.uk/sprint/graph/ontology/DiabetesConflictPatient> .
+source		SELECT * FROM ( SELECT DISTINCT     1 AS `xQuestType`, NULL AS `xLang`, CAST(CONCAT('http://www.hdruk.ac.uk/sprint/graph/patient/', `Qgraph_HospitalAdmissionsVIEW0`.`CHI`) AS CHAR(8000) CHARACTER SET utf8) AS `x` FROM      `graph`.`HospitalAdmissions` `Qgraph_HospitalAdmissionsVIEW0`,     `graph`.`HospitalAdmissions` `Qgraph_HospitalAdmissionsVIEW1` WHERE      ((REPLACE(`Qgraph_HospitalAdmissionsVIEW0`.`MainCondition`, ' ', '') = 'E115') OR ((REPLACE(`Qgraph_HospitalAdmissionsVIEW0`.`MainCondition`, ' ', '') = 'E111') OR (REPLACE(`Qgraph_HospitalAdmissionsVIEW0`.`MainCondition`, ' ', '') = 'E11'))) AND     ((REPLACE(`Qgraph_HospitalAdmissionsVIEW1`.`MainCondition`, ' ', '') = 'E109') OR ((REPLACE(`Qgraph_HospitalAdmissionsVIEW1`.`MainCondition`, ' ', '') = 'E105') OR (REPLACE(`Qgraph_HospitalAdmissionsVIEW1`.`MainCondition`, ' ', '') = 'E101'))) AND     (`Qgraph_HospitalAdmissionsVIEW0`.`CHI` = `Qgraph_HospitalAdmissionsVIEW1`.`CHI`) ) SUB_QVIEW 
+
+
+mappingId	glucophage-inferred-bleeding
+target		{p} a <http://www.hdruk.ac.uk/sprint/graph/ontology/DrugInferredBleeding> .
+source		SELECT * FROM ( SELECT DISTINCT     1 AS `pQuestType`, NULL AS `pLang`, CAST(CONCAT('http://www.hdruk.ac.uk/sprint/graph/patient/', `Qgraph_PrescriptionVIEW0`.`CHI`) AS CHAR(8000) CHARACTER SET utf8) AS `p`,     1 AS `xQuestType`, NULL AS `xLang`, CAST(CONCAT('http://www.hdruk.ac.uk/sprint/graph/prescription/', `Qgraph_PrescriptionVIEW0`.`CHI`, '_', `Qgraph_PrescriptionVIEW0`.`BnfCode`, '_', CAST(`Qgraph_PrescriptionVIEW0`.`PrescribedDate` AS CHAR(8000) CHARACTER SET utf8)) AS CHAR(8000) CHARACTER SET utf8) AS `x`,     1 AS `dQuestType`, NULL AS `dLang`, CAST(CONCAT('http://www.hdruk.ac.uk/sprint/graph/drug/', `Qgraph_PrescriptionVIEW0`.`BnfCode`) AS CHAR(8000) CHARACTER SET utf8) AS `d` FROM      `graph`.`Prescription` `Qgraph_PrescriptionVIEW0`,     `graph`.`Prescription` `Qgraph_PrescriptionVIEW1` WHERE      (`Qgraph_PrescriptionVIEW1`.`Name` = 'GLUCOPHAGE SR') AND     (`Qgraph_PrescriptionVIEW0`.`BnfCode` = `Qgraph_PrescriptionVIEW1`.`BnfCode`) ) SUB_QVIEW 
+]]
+

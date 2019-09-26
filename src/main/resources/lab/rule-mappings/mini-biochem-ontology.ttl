@@ -1,0 +1,70 @@
+@prefix : <http://www.hdruk.ac.uk/sprint/graph/ontology/> .
+@prefix READ: <http://www.hdruk.ac.uk/sprint/graph/ontology/READ/> .
+@prefix test: <http://www.hdruk.ac.uk/sprint/graph/ontology/test/> .
+@prefix icd: <http://www.hdruk.ac.uk/sprint/graph/ontology/ICD/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obda: <https://w3id.org/obda/vocabulary#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.hdruk.ac.uk/sprint/graph/ontology/> .
+
+
+###  http://www.hdruk.ac.uk/sprint/graph/Error
+:Error rdf:type owl:Class .
+
+
+###  http://www.hdruk.ac.uk/sprint/graph/Patient
+:Patient rdf:type owl:Class .
+
+### Sample ICD10 concepts
+:E10 rdf:type owl:Class .
+:E101 
+	rdf:type owl:Class ;
+	rdfs:subClassOf :E10 .
+:E105 
+	rdf:type owl:Class ;
+	rdfs:subClassOf :E10 .	
+:E109 
+	rdf:type owl:Class ;
+	rdfs:subClassOf :E10 .
+
+:E11 rdf:type owl:Class .
+:E111 
+	rdf:type owl:Class ;
+	rdfs:subClassOf :E11 .
+:E115 
+	rdf:type owl:Class ;
+	rdfs:subClassOf :E11 .
+
+:Bleeding rdf:type owl:Class .	
+:DrugInferredBleeding rdf:type owl:Class ; 
+	rdfs:subClassOf :Bleeding .
+
+:PotentialCodingErrorPatient rdf:type owl:Class .
+:DiabetesConflictPatient rdf:type owl:Class ;
+	rdfs:subClassOf :PotentialCodingErrorPatient .
+	
+:PotentialCodingErrorPatient rdf:type owl:Class .
+:DiabetesConflictPatient rdfs:subClassOf :PotentialCodingErrorPatient .
+
+###  http://www.hdruk.ac.uk/sprint/graph/hasRecord
+:hasRecord rdf:type owl:ObjectProperty ;
+           owl:inverseOf :recordOf ;
+           rdf:type owl:InverseFunctionalProperty ;
+           rdfs:domain :Patient ;
+           rdfs:range :Record .
+
+:hasICD10Code rdf:type owl:DatatypeProperty ;
+			rdfs:domain :Patient .
+			
+:drugName rdf:type owl:DatatypeProperty ;
+			rdfs:domain :Patient .
+			
+:hasPrescription rdf:type owl:ObjectProperty ;
+           rdfs:domain :Patient .
+
+:hasPrescription rdf:type owl:ObjectProperty .
+:prescribedDrug rdf:type owl:ObjectProperty .
+

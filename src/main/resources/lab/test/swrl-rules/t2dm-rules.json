@@ -1,0 +1,4 @@
+{
+	"t1-t2-exclusive": "E11(?x) ^ E10(?x) -> DiabetesConflictPatient(?x)",
+	"glucophage-inferred-bleeding": "hasPrescription(?p, ?x) ^ prescribedDrug(?x, ?d) ^ drugName(?d, \"GLUCOPHAGE SR\") -> DrugInferredBleeding(?p)"
+}

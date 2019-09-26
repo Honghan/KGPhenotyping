@@ -1,0 +1,10 @@
+PREFIX : <http://www.hdruk.ac.uk/sprint/graph/> 
+PREFIX test: 	<http://www.hdruk.ac.uk/sprint/graph/ontology/test/> 
+PREFIX onto: 	<http://www.hdruk.ac.uk/sprint/graph/ontology/>
+PREFIX READ: <http://www.hdruk.ac.uk/sprint/graph/ontology/READ/> 
+PREFIX patient: <http://www.hdruk.ac.uk/sprint/graph/patient/> 
+PREFIX RCTV2: <http://purl.bioontology.org/ontology/RCTV2/>
+ SELECT DISTINCT *
+ WHERE { 
+   %s
+ }

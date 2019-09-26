@@ -1,0 +1,44 @@
+============
+PREFIX : 	<http://www.hdruk.ac.uk/sprint/graph/> 
+PREFIX onto: 	<http://www.hdruk.ac.uk/sprint/graph/ontology/> 
+PREFIX test: 	<http://www.hdruk.ac.uk/sprint/graph/ontology/test/> 
+PREFIX owl:	<http://www.w3.org/2002/07/owl#>
+
+ SELECT DISTINCT ?x 
+ WHERE { 
+   ?x owl:equivalentClass test:ALT. 
+ }
+ 
+============
+
+PREFIX : <http://www.hdruk.ac.uk/sprint/graph/> 
+PREFIX test: 	<http://www.hdruk.ac.uk/sprint/graph/ontology/test/> 
+PREFIX onto: 	<http://www.hdruk.ac.uk/sprint/graph/ontology/>
+PREFIX READ: <http://www.hdruk.ac.uk/sprint/graph/ontology/READ/> 
+PREFIX patient: <http://www.hdruk.ac.uk/sprint/graph/patient/> 
+PREFIX RCTV2: <http://purl.bioontology.org/ontology/RCTV2/>
+ SELECT DISTINCT ?patient ?code ?result ?unit
+ WHERE { 
+   ?x onto:testCode ?code.
+   ?x a test:ALT .
+   ?x onto:testResult ?result .
+   ?x onto:testUnit ?unit.
+   ?x onto:recordOf ?patient.
+ }
+ 
+============
+
+PREFIX : <http://www.hdruk.ac.uk/sprint/graph/> 
+PREFIX test: 	<http://www.hdruk.ac.uk/sprint/graph/ontology/test/> 
+PREFIX onto: 	<http://www.hdruk.ac.uk/sprint/graph/ontology/>
+PREFIX READ: <http://www.hdruk.ac.uk/sprint/graph/ontology/READ/> 
+PREFIX patient: <http://www.hdruk.ac.uk/sprint/graph/patient/> 
+PREFIX RCTV2: <http://purl.bioontology.org/ontology/RCTV2/>
+ SELECT DISTINCT ?patient ?code ?result ?unit
+ WHERE { 
+   ?x onto:testCode ?code.
+   ?x a test:LiverImpairmentTest .
+   ?x onto:testResult ?result .
+   ?x onto:testUnit ?unit.
+   ?x onto:recordOf ?patient.
+ }

@@ -1,0 +1,37 @@
+[PrefixDeclaration]
+:			http://www.hdruk.ac.uk/sprint/graph/
+onto:		http://www.hdruk.ac.uk/sprint/graph/ontology/
+owl:		http://www.w3.org/2002/07/owl#
+rdf:		http://www.w3.org/1999/02/22-rdf-syntax-ns#
+xml:		http://www.w3.org/XML/1998/namespace
+xsd:		http://www.w3.org/2001/XMLSchema#
+obda:		https://w3id.org/obda/vocabulary#
+rdfs:		http://www.w3.org/2000/01/rdf-schema#
+
+[MappingDeclaration] @collection [[
+mappingId	Laboratory
+target		:lab/{Labnumber} a onto:Laboratory ; :supportTest onto:READ/{ReadCodeValue} . 
+source		select * from lab_tayside
+
+mappingId	patient
+target		:patient/{CHI} a onto:Patient ; :HealthBoard {Healthboard} ; :hasSample <graph/lab_abdn/{SampleDate}> . 
+source		select * from lab_tayside
+
+mappingId	record
+target		:record/{CHI}_{Healthboard}_{TestCode}_{SampleDate}_{Result} a onto:Record ; onto:recordOf :patient/{CHI}; onto:testCode {TestCode} ; a onto:test/{GoodtestCode}; a onto:READ/{ReadCodeValue}; onto:testResult {Result} ; onto:testUnit {QuantityUnit} ; :basedOnSample <graph/lab_abdn/{SampleDate}> ; :doneBy <graph/lab_abdn/{Labnumber}> . 
+source		select *, replace(replace(testcode, ' ', ''), '"', '_') GoodtestCode from lab_tayside
+
+mappingId	ALT
+target		onto:READ/{ReadCodeValue} owl:equivalentClass onto:test/ALT . 
+source		select * from lab_tayside
+			where TestCode = 'ALT'
+
+mappingId	read to testcode
+target		onto:READ/{ReadCodeValue} owl:equivalentClass onto:test/{testcode} . 
+source		select distinct replace(replace(testcode, ' ', ''), '"', '_') testcode, ReadCodeValue from lab_tayside
+
+mappingId	sample
+target		:sample/{SampleDate} a :Sample ; :SampleType {SampleType} ; :fromPatient <graph/lab_abdn/{CHI}> ; :contributeToTest <graph/lab_abdn/{ReadCodeValue}> . 
+source		select * from lab_tayside
+]]
+
