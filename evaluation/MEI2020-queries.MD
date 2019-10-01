@@ -41,6 +41,6 @@ PREFIX snomed: <http://www.hdruk.ac.uk/sprint/graph/ontology/snomed/>
 ```
 
 ```SQL
-select CHI from graph.Admissions where maincondition like 'E11%' or maincondition in 
+select CHI from graph.HospitalAdmissions where maincondition like 'E11%' or maincondition in 
 ('-25000', '-25002', '-25010', '-25012', '-25020', '-25022', '-25030', '-25032', '-25040', '-25042', '-25050', '-25052', '-25060', '-25062', '-25070', '-25072', '-25080', '-25082', '-25090', '-25092')
 ```
