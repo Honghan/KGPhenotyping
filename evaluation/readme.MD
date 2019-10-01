@@ -8,4 +8,17 @@ Since there is no certain criteria for correct and complete data, a constant num
 
 > **_Request 1_** The requirement of consistency checking needs our approach to fill absence of data according to its inner constraints. This contributes to a request, that give all patients in given data source, including those who use drugs but not declared to be patients.
 
-The SPARQL query work as Test Query is:
+The SPARQL query work as **Test Query** is:
+
+![the SPARQL query for the Request 1](RE1.png)
+
+The **Plain SQL Query** is:
+```
+SELECT DISTINCT CHI FROM lab_abdn;
+```
+Although inference using relations of classes could not be realised in MySQL since no hierarchical information is contained in databases, little tricks (```OUTER JOINT``` and ```UNION```) can be used to query for all distince patients specifically for Request 1. In the given data, information of health board and which drugs used by patients are stored seperately in different tables. However, since full outer joint is not supported in MySQL, ```UNION``` are adapted. The **Complex SQL Query** is as follows:
+```
+SELECT DISTINCT CHI FROM lab_abdn UNION SELECT
+DISTINCT CHI FROM Prescription;
+```
+
