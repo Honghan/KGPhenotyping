@@ -140,7 +140,8 @@ On the other hand, the completeness of the framework is proved in 2 ways. One is
 We have demonstrated that using an ontology benefits the data access in data-level inconsistency handling and knowledge-level inference. Aside from the framework’s completeness and correctness shown earlier, using SPARQL querying over virtual RDF data sources also shows advantages compared to using MySQL in relational databases.
 
 Firstly, using the Ontop approach to map data sources to an ontology extends the knowledge domain by adding hierarchical information, which contributes additional functionalities of the given framework. Additionally, our framework shows that external ontologies could be combined to provide more functions, including recommendations of similar tests. Secondly, implementing the framework using SPARQL and RDF gives greater standardisation. It uses a unified language to guarantee convenience of integrating isolated data. Sources with same schema can be easily mapped to our ontology. Thirdly, adding SWRL rules extends the expressivity to define complex relations. For instance, relation of patients’ test results can be better described.
-**Patient(?patient)^hasSample(?patient,?sample)^contributeToTest(?sample,?test)!PatientHavingTest(?patient)**
+![second euqation](https://latex.codecogs.com/gif.latex?Patient%28%3Fpatient%29%5Cland%20hasSample%28%3Fpatient%2C%3Fsample%29%5Cland%20contributeToTest%28%3Fsample%2C%20%3Ftest%29%5Crightarrow%20PatientHavingTest%28%3Fpatient%29)
+
 Lastly, the ontology allows more sophisticated explanation that users could keep track of the inference logic based on relations among entities.
 
 
