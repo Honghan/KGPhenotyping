@@ -40,7 +40,7 @@ Similarly, numbers of results and numbers of inconsistency will be collected for
 
 > **_Request 1_** The requirement of consistency checking needs our approach to fill absence of data according to its inner constraints. This contributes to a request, that give all patients in given data source, including those who use drugs but not declared to be patients.
 
-The SPARQL query work as **Test Query** is:
+  * The SPARQL query work as **Test Query** is:
 
 ![the SPARQL query for the Request 1](RE1.png)
 
@@ -54,3 +54,8 @@ SELECT DISTINCT CHI FROM lab_abdn UNION SELECT
 DISTINCT CHI FROM Prescription;
 ```
 
+> **_Request 2_** The requirement of handling inconsistent data also needs the framework to make assumptions according to properties of super class relations. Another request is get all ALT tests, while there is test only declared to be 44GB test, which is sub class of the ALT test.
+
+  * The SPARQL query works as **Test Query** is:
+  
+  ![the SPARQL query for the Request 2](RE2.png)
