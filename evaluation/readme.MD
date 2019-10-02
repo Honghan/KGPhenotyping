@@ -120,7 +120,9 @@ Since no hierarchical information can be retrieved from databases, no **Customis
 ## Result and Discussion
 ### Result
 The 5 requests stated earlier is actually 5 experiments, and their results are shown in table below:
-    TABLE TO DO
+
+
+
 The numbers of querying results of the Test Query, the Plain SQL Query and the Complex SQL Query for the Request 1 are 100, 93 and 99 respectively. While the previous two number indicate that there are instances not declared to be instances of the class ```Patient``` but considered as instances of ```Patient``` by our framework since the domain of the object property ```useDrug``` can only be ```Patient```; the comparison between results of the Test Query and the Complex SQL query shows that there are still 1 instance not declared to be instance of ```Patient```, but can be inferred to be instance of ```Patient``` since the domain of another object property ```hasRecord``` can only be ```Patient``` as well. The inconsistency here means loss of information. Therefore, there are 7 more inconsistent results for the Plain SQL Query than the Test Query, and 1 more inconsistent result for the Complex SQL Query than the Test Query.
 
 For the Request 2, numbers of querying results of the Test Query, the Plain SQL Query and the Complex SQL Query are 19, 12 and 17 respectively. The difference between results of the Test Query and the Plain SQL query means that there are some instances of the class ```RC44G3``` are assumed to be instances of the class ```ALT```, which is acknowledged by domain experts. The result also indicates that there are 7 more inconsistent result, which refers to loss of information of tests whose read code is "44G3." without test code information, for Plain SQL Query than Test Query. The result of Complex SQL query illustrates that there is still information loss that 2 more instances, which are 44GB tests without test code information, should also be considered ALT test in the knowledge domain.
