@@ -8,3 +8,4 @@ Extracting patient phenotypes from routinely collected health data (such as Elec
 2. can automatically populate and conduct phenotype computations on heterogeneous data spaces. 
 
 This framework has been deployed on five Scottish health datasets.
+![alt text](https://raw.githubusercontent.com/Honghan/KGPhenotyping/master/assets/kg-phenotyping-arch.png "Architecture of Knowledge Driven Phenotyping")
