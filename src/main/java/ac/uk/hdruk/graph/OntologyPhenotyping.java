@@ -7,6 +7,9 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.logging.Logger;
+import java.util.ArrayList;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 import org.apache.commons.configuration2.Configuration;
 import org.apache.commons.configuration2.PropertiesConfiguration;
@@ -146,6 +149,27 @@ public class OntologyPhenotyping {
 	    }	    
 	}
 	
+	/**
+	 * List the existing studies
+	 * @return List of studies where each study is a JSON String 
+	 */
+	public List<String> listStudy() throws IOException {
+                ArrayList<String> result = new ArrayList<String>(); 
+                File directory = new File(_studiesFolder);
+                if (! directory.exists()){
+			return result;
+                }
+                File[] dirList = directory.listFiles();
+	        for (File dir: dirList) {
+			File rulesFile = new File(dir.getAbsolutePath()+"/rules.json");
+			if (rulesFile.exists()){
+				String rules = new String (Files.readAllBytes(Paths.get(rulesFile.getPath())));
+	 	                result.add(new String("{\"name\":\""+dir.getName()+"\",\"rules\":"+rules+"}"));
+			}
+	        }
+		return result;
+	}
+
 	public String doStudyQuery(String sparqlQuery, String studyName) {
 		String studyOBDAFile = _studiesFolder + "/" + studyName + "/" + "generated.obda";
 		// initialise obda reasoner

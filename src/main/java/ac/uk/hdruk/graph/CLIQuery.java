@@ -3,6 +3,8 @@ package ac.uk.hdruk.graph;
 import java.io.File;
 import java.io.IOException;
 
+import java.util.List;
+
 import org.apache.commons.configuration2.ex.ConfigurationException;
 import org.apache.commons.io.FileUtils;
 import org.semanticweb.owlapi.io.ToStringRenderer;
@@ -63,8 +65,33 @@ public class CLIQuery {
 		} 
 	}
 	
+	/**
+	 * List studies
+	 */
+	public static void listStudy() {
+		try {
+			OntologyPhenotyping op = OntologyPhenotyping.getInstance(configFile);
+			System.out.println("[");
+	                System.out.println(String.join(",\n", op.listStudy()));
+			System.out.println("]");
+		} catch (Exception e) {
+			e.printStackTrace();
+		} 
+	}
+	
+	/**
+	 * Usage:
+	 *   Create/update study:
+	 *     java -cp /app/OntologyPhenotyping-0.0.1-SNAPSHOT.jar:/app/lib/* ac.uk.hdruk.graph.CLIQuery <study> -r <file>
+	 *   Run query:
+	 *     java -cp /app/OntologyPhenotyping-0.0.1-SNAPSHOT.jar:/app/lib/* ac.uk.hdruk.graph.CLIQuery <study> -q <file>
+	 *   List studies:
+	 *     java -cp /app/OntologyPhenotyping-0.0.1-SNAPSHOT.jar:/app/lib/* ac.uk.hdruk.graph.CLIQuery -l
+	 */
 	public static void main(String[] args) {;
-		if (args[1].equals("-r")) {
+		if (args[0].equals("-l")) {
+		    listStudy();
+		} else if (args[1].equals("-r")) {
 		    updateStudy(args[0], args[2]);
 		} else if (args[1].equals("-q")) {
 		    runQuery(args[0], args[2]);
