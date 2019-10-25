@@ -12,6 +12,9 @@ from os import unlink
 app = Flask(__name__)
 api = Api(app)
 
+_classpath = "/app/OntologyPhenotyping-0.0.1-SNAPSHOT.jar:/app/lib/*"
+_class = "ac.uk.hdruk.graph.CLIQuery"
+
 class Study(Resource):
 
     # create/update a study
@@ -31,7 +34,7 @@ class Study(Resource):
         tf = tempfile.NamedTemporaryFile(mode='w', delete=False)
         tf.write(args["rules"])
         tf.close()
-        result = subprocess.run(["java", "-cp", "/app/OntologyPhenotyping-0.0.1-SNAPSHOT.jar:/app/lib/*", "ac.uk.hdruk.graph.CLIQuery", args["study"], "-r", tf.name], \
+        result = subprocess.run(["java", "-cp", _classpath, _class, args["study"], "-r", tf.name], \
                 stdout=subprocess.PIPE, encoding='utf-8')
         unlink(tf.name)
 
@@ -42,6 +45,14 @@ class Study(Resource):
         status = 200
 
         return output, status
+  
+    # list existing studies
+    def get(self):
+        result = subprocess.run(["java", "-cp", _classpath, _class, "-l"], \
+            stdout=subprocess.PIPE, encoding='utf-8')
+        if not result.returncode == 0:
+             return "Command exited with non-zero return code", 500
+        return result.stdout, 200
 
 class Query(Resource):
 
@@ -65,7 +76,7 @@ class Query(Resource):
         tf = tempfile.NamedTemporaryFile(mode='w', delete=False)
         tf.write(args["sparql"])
         tf.close()
-        result = subprocess.run(["java", "-cp", "/app/OntologyPhenotyping-0.0.1-SNAPSHOT.jar:/app/lib/*", "ac.uk.hdruk.graph.CLIQuery", args["study"], "-q", tf.name], \
+        result = subprocess.run(["java", "-cp", _classpath, _class, args["study"], "-q", tf.name], \
                 stdout=subprocess.PIPE, encoding='utf-8')
         unlink(tf.name)
 
