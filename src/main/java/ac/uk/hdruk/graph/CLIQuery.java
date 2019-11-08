@@ -66,9 +66,23 @@ public class CLIQuery {
 	}
 	
 	/**
-	 * List studies
+	 * List study
 	 */
-	public static void listStudy() {
+	public static void listStudy(String name) {
+		try {
+			OntologyPhenotyping op = OntologyPhenotyping.getInstance(configFile);
+	                System.out.println(op.getStudy(name));
+		} catch (IOException e) {
+			System.out.println("NOT_FOUND");
+		} catch (Exception e) {
+			e.printStackTrace();
+		} 
+	}
+	
+	/**
+	 * List study
+	 */
+	public static void listStudies() {
 		try {
 			OntologyPhenotyping op = OntologyPhenotyping.getInstance(configFile);
 			System.out.println("[");
@@ -78,7 +92,7 @@ public class CLIQuery {
 			e.printStackTrace();
 		} 
 	}
-	
+
 	/**
 	 * Usage:
 	 *   Create/update study:
@@ -90,7 +104,11 @@ public class CLIQuery {
 	 */
 	public static void main(String[] args) {;
 		if (args[0].equals("-l")) {
-		    listStudy();
+		    if (args.length > 1) {
+		        listStudy(args[1]);
+		    } else {
+			listStudies();
+		    }
 		} else if (args[1].equals("-r")) {
 		    updateStudy(args[0], args[2]);
 		} else if (args[1].equals("-q")) {

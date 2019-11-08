@@ -170,6 +170,24 @@ public class OntologyPhenotyping {
 		return result;
 	}
 
+	/**
+	 * Get an existing studies
+	 * @return JSON String representing a study 
+	 */
+	public String getStudy(String name) throws IOException {
+                String result = "";
+                File directory = new File(_studiesFolder+"/"+name);
+                if (! directory.exists()){
+			throw new IOException("NOT FOUND");
+                }
+		File rulesFile = new File(_studiesFolder+"/"+name+"/rules.json");
+		if (rulesFile.exists()){
+		        String rules = new String (Files.readAllBytes(Paths.get(rulesFile.getPath())));
+	                result = "{\"name\":\""+name+"\",\"rules\":"+rules+"}";
+		}
+		return result;
+	}
+
 	public String doStudyQuery(String sparqlQuery, String studyName) {
 		String studyOBDAFile = _studiesFolder + "/" + studyName + "/" + "generated.obda";
 		// initialise obda reasoner
