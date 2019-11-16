@@ -1,0 +1,16 @@
+version: '3.3'
+
+services:
+  labdb1:
+    image: kgsvc:latest
+    volumes:
+      - app_data:/app
+    restart: always
+
+volumes:
+  app_data:
+    driver_opts:
+      type: none
+      device:YOUR_APP_FOLDER 
+      o: bind
+  
