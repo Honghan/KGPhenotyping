@@ -163,6 +163,10 @@ public class OntologyPhenotyping {
 		String studyOBDAFile = studyFolder + "/" + "generated.obda";
 		File ruleFile = new File(studyFolder + "/" + "rules.json");
 		if (ruleFile.exists()){
+			if (ruleProcessor == null){
+				// initialise studyRuleProcessor
+				ruleProcessor = new StudyRuleProcessor(_obdaFile, _ontologyFile, _dbPropertyFile, _queryTemplateFile);
+			}
 			ruleProcessor.translateRules(ruleFile.getAbsolutePath(), _obdaFile, studyOBDAFile);
 		}
 	}
