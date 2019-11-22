@@ -150,6 +150,22 @@ public class OntologyPhenotyping {
 	    	ruleProcessor.translateRules(ruleFile.getAbsolutePath(), _obdaFile, studyOBDAFile);
 	    }	    
 	}
+
+	/**
+	 * generate obda when missing
+	 * @param studyFolder
+	 * @throws IOException
+	 * @throws OWLOntologyCreationException
+	 * @throws SWRLParseException
+	 * @throws SWRLBuiltInException
+	 */
+	void generateOBDAWhenMissing(String studyFolder) throws IOException, OWLOntologyCreationException, SWRLParseException, SWRLBuiltInException {
+		String studyOBDAFile = studyFolder + "/" + "generated.obda";
+		File ruleFile = new File(studyFolder + "/" + "rules.json");
+		if (ruleFile.exists()){
+			ruleProcessor.translateRules(ruleFile.getAbsolutePath(), _obdaFile, studyOBDAFile);
+		}
+	}
 	
 	/**
 	 * List the existing studies
@@ -194,6 +210,17 @@ public class OntologyPhenotyping {
 
 	public String doStudyQuery(String sparqlQuery, String studyName) {
 		String studyOBDAFile = _studiesFolder + "/" + studyName + "/" + "generated.obda";
+		try {
+			generateOBDAWhenMissing(_studiesFolder + "/" + studyName);
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (OWLOntologyCreationException e) {
+			e.printStackTrace();
+		} catch (SWRLParseException e) {
+			e.printStackTrace();
+		} catch (SWRLBuiltInException e) {
+			e.printStackTrace();
+		}
 		// initialise obda reasoner
 	    OntopSQLOWLAPIConfiguration ontopConfig = (OntopSQLOWLAPIConfiguration) OntopSQLOWLAPIConfiguration.defaultBuilder()
                 .nativeOntopMappingFile(studyOBDAFile)
