@@ -100,6 +100,7 @@ public class OntologyPhenotyping {
 	    _ontologyFile = getMandatoryStringConfig(config, "ONTOLOGY_FILE");
 	    _dbPropertyFile = getMandatoryStringConfig(config, "DB_PROPERTY_FILE");
 	    _queryTemplateFile = getMandatoryStringConfig(config, "QUERY_TEMPLATE");
+	    _logger.info(String.format("initiated with [%s, %s, %s]", _obdaFile, _ontologyFile, _dbPropertyFile));
 	}
 	
 	/**
