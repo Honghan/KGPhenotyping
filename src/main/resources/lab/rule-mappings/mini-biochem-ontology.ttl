@@ -1,70 +1,960 @@
 @prefix : <http://www.hdruk.ac.uk/sprint/graph/ontology/> .
+@prefix hdr: <http://www.hdruk.ac.uk/sprint/graph/ontology/> .
 @prefix READ: <http://www.hdruk.ac.uk/sprint/graph/ontology/READ/> .
 @prefix test: <http://www.hdruk.ac.uk/sprint/graph/ontology/test/> .
-@prefix icd: <http://www.hdruk.ac.uk/sprint/graph/ontology/ICD/> .
+@prefix icd10: <http://www.hdruk.ac.uk/sprint/graph/ontology/ICD10/> .
+@prefix icd9: <http://www.hdruk.ac.uk/sprint/graph/ontology/ICD9/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix obda: <https://w3id.org/obda/vocabulary#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix umls: <http://bioportal.bioontology.org/ontologies/umls/> .
 @base <http://www.hdruk.ac.uk/sprint/graph/ontology/> .
+
+icd10:E103313 a owl:Class ;
+	rdfs:subClassOf icd10:E10331 ;
+	umls:cui """C4268021"""^^xsd:string .
+
+icd10:E103312 a owl:Class ;
+	rdfs:subClassOf icd10:E10331 ;
+	umls:cui """C4268020"""^^xsd:string .
+
+icd10:E10641 a owl:Class ;
+	rdfs:subClassOf icd10:E1064 ;
+	umls:cui """C2874068"""^^xsd:string .
+
+icd10:E10649 a owl:Class ;
+	rdfs:subClassOf icd10:E1064 ;
+	umls:cui """C2874069"""^^xsd:string .
+
+icd10:E10339 a owl:Class ;
+	rdfs:subClassOf icd10:E1033 ;
+	umls:cui """C2874037"""^^xsd:string .
+
+icd10:E10331 a owl:Class ;
+	rdfs:subClassOf icd10:E1033 ;
+	umls:cui """C2874036"""^^xsd:string .
+
+icd10:E103549 a owl:Class ;
+	rdfs:subClassOf icd10:E10354 ;
+	umls:cui """C4268053"""^^xsd:string .
+
+icd10:E103552 a owl:Class ;
+	rdfs:subClassOf icd10:E10355 ;
+	umls:cui """C4268056"""^^xsd:string .
+
+icd10:E103551 a owl:Class ;
+	rdfs:subClassOf icd10:E10355 ;
+	umls:cui """C4268055"""^^xsd:string .
+
+icd10:E105 a owl:Class ;
+	rdfs:subClassOf icd10:E10 ;
+	umls:cui """C0837011"""^^xsd:string .
+
+icd10:E104 a owl:Class ;
+	rdfs:subClassOf icd10:E10 ;
+	umls:cui """C0348915"""^^xsd:string .
+
+icd10:E106 a owl:Class ;
+	rdfs:subClassOf icd10:E10 ;
+	umls:cui """C0342261"""^^xsd:string .
+
+icd10:E101 a owl:Class ;
+	rdfs:subClassOf icd10:E10 ;
+	umls:cui """C0342294"""^^xsd:string .
+
+icd10:E103 a owl:Class ;
+	rdfs:subClassOf icd10:E10 ;
+	umls:cui """C0348914"""^^xsd:string .
+
+icd10:E102 a owl:Class ;
+	rdfs:subClassOf icd10:E10 ;
+	umls:cui """C2874020"""^^xsd:string .
+
+icd10:E109 a owl:Class ;
+	rdfs:subClassOf icd10:E10 ;
+	umls:cui """C0494284"""^^xsd:string .
+
+icd10:E108 a owl:Class ;
+	rdfs:subClassOf icd10:E10 ;
+	umls:cui """C1299613"""^^xsd:string .
+
+icd10:E1037X9 a owl:Class ;
+	rdfs:subClassOf icd10:E1037 ;
+	umls:cui """C4268067"""^^xsd:string .
+
+icd10:E1037X1 a owl:Class ;
+	rdfs:subClassOf icd10:E1037 ;
+	umls:cui """C4268064"""^^xsd:string .
+
+icd10:E1059 a owl:Class ;
+	rdfs:subClassOf icd10:E105 ;
+	umls:cui """C2874054"""^^xsd:string .
+
+icd10:E1052 a owl:Class ;
+	rdfs:subClassOf icd10:E105 ;
+	umls:cui """C2874053"""^^xsd:string .
+
+icd10:E10622 a owl:Class ;
+	rdfs:subClassOf icd10:E1062 ;
+	umls:cui """C2874063"""^^xsd:string .
+
+icd10:E10621 a owl:Class ;
+	rdfs:subClassOf icd10:E1062 ;
+	umls:cui """C2874062"""^^xsd:string .
+
+icd10:E103391 a owl:Class ;
+	rdfs:subClassOf icd10:E10339 ;
+	umls:cui """C4268023"""^^xsd:string .
+
+icd10:E103393 a owl:Class ;
+	rdfs:subClassOf icd10:E10339 ;
+	umls:cui """C4268025"""^^xsd:string .
+
+icd10:E1042 a owl:Class ;
+	rdfs:subClassOf icd10:E104 ;
+	umls:cui """C2874046"""^^xsd:string .
+
+icd10:E1043 a owl:Class ;
+	rdfs:subClassOf icd10:E104 ;
+	umls:cui """C2874047"""^^xsd:string .
+
+icd10:E1040 a owl:Class ;
+	rdfs:subClassOf icd10:E104 ;
+	umls:cui """C2874045"""^^xsd:string .
+
+icd10:E1041 a owl:Class ;
+	rdfs:subClassOf icd10:E104 ;
+	umls:cui """C0837007"""^^xsd:string .
+
+icd10:E1044 a owl:Class ;
+	rdfs:subClassOf icd10:E104 ;
+	umls:cui """C2874049"""^^xsd:string .
+
+icd10:E1036 a owl:Class ;
+	rdfs:subClassOf icd10:E103 ;
+	umls:cui """C0837004"""^^xsd:string .
+
+icd10:E1033 a owl:Class ;
+	rdfs:subClassOf icd10:E103 ;
+	umls:cui """C2874035"""^^xsd:string .
+
+icd10:E1032 a owl:Class ;
+	rdfs:subClassOf icd10:E103 ;
+	umls:cui """C2874031"""^^xsd:string .
+
+icd10:E103311 a owl:Class ;
+	rdfs:subClassOf icd10:E10331 ;
+	umls:cui """C4268019"""^^xsd:string .
+
+icd10:E103529 a owl:Class ;
+	rdfs:subClassOf icd10:E10352 ;
+	umls:cui """C4268043"""^^xsd:string .
+
+icd10:E103211 a owl:Class ;
+	rdfs:subClassOf icd10:E10321 ;
+	umls:cui """C4268011"""^^xsd:string .
+
+icd10:E103599 a owl:Class ;
+	rdfs:subClassOf icd10:E10359 ;
+	umls:cui """C4268062"""^^xsd:string .
+
+icd10:E103593 a owl:Class ;
+	rdfs:subClassOf icd10:E10359 ;
+	umls:cui """C4268061"""^^xsd:string .
+
+icd10:E103592 a owl:Class ;
+	rdfs:subClassOf icd10:E10359 ;
+	umls:cui """C4268060"""^^xsd:string .
+
+icd10:E103419 a owl:Class ;
+	rdfs:subClassOf icd10:E10341 ;
+	umls:cui """C4268030"""^^xsd:string .
+
+icd10:E103412 a owl:Class ;
+	rdfs:subClassOf icd10:E10341 ;
+	umls:cui """C4268028"""^^xsd:string .
+
+icd10:E103413 a owl:Class ;
+	rdfs:subClassOf icd10:E10341 ;
+	umls:cui """C4268029"""^^xsd:string .
+
+icd10:E1065 a owl:Class ;
+	rdfs:subClassOf icd10:E106 ;
+	umls:cui """C2874070"""^^xsd:string .
+
+icd10:E1063 a owl:Class ;
+	rdfs:subClassOf icd10:E106 ;
+	umls:cui """C2874065"""^^xsd:string .
+
+icd10:E1039 a owl:Class ;
+	rdfs:subClassOf icd10:E103 ;
+	umls:cui """C2874044"""^^xsd:string .
+
+icd10:E1037 a owl:Class ;
+	rdfs:subClassOf icd10:E103 ;
+	umls:cui """C4268063"""^^xsd:string .
+
+icd10:E1035 a owl:Class ;
+	rdfs:subClassOf icd10:E103 ;
+	umls:cui """C2874041"""^^xsd:string .
+
+icd10:E1034 a owl:Class ;
+	rdfs:subClassOf icd10:E103 ;
+	umls:cui """C2874038"""^^xsd:string .
+
+icd10:E1031 a owl:Class ;
+	rdfs:subClassOf icd10:E103 ;
+	umls:cui """C2874028"""^^xsd:string .
+
+icd10:E103513 a owl:Class ;
+	rdfs:subClassOf icd10:E10351 ;
+	umls:cui """C4268037"""^^xsd:string .
+
+icd10:E10319 a owl:Class ;
+	rdfs:subClassOf icd10:E1031 ;
+	umls:cui """C2874030"""^^xsd:string .
+
+icd10:E10311 a owl:Class ;
+	rdfs:subClassOf icd10:E1031 ;
+	umls:cui """C2874029"""^^xsd:string .
+
+icd10:E103539 a owl:Class ;
+	rdfs:subClassOf icd10:E10353 ;
+	umls:cui """C4268048"""^^xsd:string .
+
+icd10:E103531 a owl:Class ;
+	rdfs:subClassOf icd10:E10353 ;
+	umls:cui """C4268045"""^^xsd:string .
+
+icd10:E103533 a owl:Class ;
+	rdfs:subClassOf icd10:E10353 ;
+	umls:cui """C4268047"""^^xsd:string .
+
+icd10:E103532 a owl:Class ;
+	rdfs:subClassOf icd10:E10353 ;
+	umls:cui """C4268046"""^^xsd:string .
+
+icd10:E10618 a owl:Class ;
+	rdfs:subClassOf icd10:E1061 ;
+	umls:cui """C2874058"""^^xsd:string .
+
+icd10:E10610 a owl:Class ;
+	rdfs:subClassOf icd10:E1061 ;
+	umls:cui """C2874057"""^^xsd:string .
+
+icd10:E1051 a owl:Class ;
+	rdfs:subClassOf icd10:E105 ;
+	umls:cui """C2874051"""^^xsd:string .
+
+icd10:E103591 a owl:Class ;
+	rdfs:subClassOf icd10:E10359 ;
+	umls:cui """C4268059"""^^xsd:string .
+
+icd10:E10341 a owl:Class ;
+	rdfs:subClassOf icd10:E1034 ;
+	umls:cui """C2874039"""^^xsd:string .
+
+icd10:E10349 a owl:Class ;
+	rdfs:subClassOf icd10:E1034 ;
+	umls:cui """C2874040"""^^xsd:string .
+
+icd10:E103411 a owl:Class ;
+	rdfs:subClassOf icd10:E10341 ;
+	umls:cui """C4268027"""^^xsd:string .
+
+icd10:E103291 a owl:Class ;
+	rdfs:subClassOf icd10:E10329 ;
+	umls:cui """C4268015"""^^xsd:string .
+
+icd10:E103292 a owl:Class ;
+	rdfs:subClassOf icd10:E10329 ;
+	umls:cui """C4268016"""^^xsd:string .
+
+icd10:E103293 a owl:Class ;
+	rdfs:subClassOf icd10:E10329 ;
+	umls:cui """C4268017"""^^xsd:string .
+
+icd10:E103299 a owl:Class ;
+	rdfs:subClassOf icd10:E10329 ;
+	umls:cui """C4268018"""^^xsd:string .
+
+icd10:E1021 a owl:Class ;
+	rdfs:subClassOf icd10:E102 ;
+	umls:cui """C0836995"""^^xsd:string .
+
+icd10:E1022 a owl:Class ;
+		rdfs:subClassOf icd10:E102 ;
+	umls:cui """C2874025"""^^xsd:string .
+
+icd10:E1029 a owl:Class ;
+		rdfs:subClassOf icd10:E102 ;
+	umls:cui """C2874026"""^^xsd:string .
+
+icd10:E103319 a owl:Class ;
+	rdfs:subClassOf icd10:E10331 ;
+	umls:cui """C4268022"""^^xsd:string .
+
+icd10:E1037X2 a owl:Class ;
+	rdfs:subClassOf icd10:E1037 ;
+	umls:cui """C4268065"""^^xsd:string .
+
+icd10:E1037X3 a owl:Class ;
+	rdfs:subClassOf icd10:E1037 ;
+	umls:cui """C4268066"""^^xsd:string .
+
+icd10:E103522 a owl:Class ;
+	rdfs:subClassOf icd10:E10352 ;
+	umls:cui """C4268041"""^^xsd:string .
+
+icd10:E103523 a owl:Class ;
+	rdfs:subClassOf icd10:E10352 ;
+	umls:cui """C4268042"""^^xsd:string .
+
+icd10:E103521 a owl:Class ;
+	rdfs:subClassOf icd10:E10352 ;
+	umls:cui """C4268040"""^^xsd:string .
+
+icd10:E10620 a owl:Class ;
+	rdfs:subClassOf icd10:E1062 ;
+	umls:cui """C2874060"""^^xsd:string .
+
+icd10:E10628 a owl:Class ;
+	rdfs:subClassOf icd10:E1062 ;
+	umls:cui """C2874064"""^^xsd:string .
+
+icd10:E103491 a owl:Class ;
+	rdfs:subClassOf icd10:E10349 ;
+	umls:cui """C4268031"""^^xsd:string .
+
+icd10:E103499 a owl:Class ;
+	rdfs:subClassOf icd10:E10349 ;
+	umls:cui """C4268034"""^^xsd:string .
+
+icd10:E103219 a owl:Class ;
+	rdfs:subClassOf icd10:E10321 ;
+	umls:cui """C4268014"""^^xsd:string .
+
+icd10:E1049 a owl:Class ;
+	rdfs:subClassOf icd10:E104 ;
+	umls:cui """C2874050"""^^xsd:string .
+
+icd10:E103212 a owl:Class ;
+	rdfs:subClassOf icd10:E10321 ;
+	umls:cui """C4268012"""^^xsd:string .
+
+icd10:E103213 a owl:Class ;
+	rdfs:subClassOf icd10:E10321 ;
+	umls:cui """C4268013"""^^xsd:string .
+
+icd10:E10353 a owl:Class ;
+	rdfs:subClassOf icd10:E1035 ;
+	umls:cui """C4268044"""^^xsd:string .
+
+icd10:E10352 a owl:Class ;
+	rdfs:subClassOf icd10:E1035 ;
+	umls:cui """C4268039"""^^xsd:string .
+
+icd10:E10351 a owl:Class ;
+	rdfs:subClassOf icd10:E1035 ;
+	umls:cui """C2874042"""^^xsd:string .
+
+icd10:E10355 a owl:Class ;
+	rdfs:subClassOf icd10:E1035 ;
+	umls:cui """C4268054"""^^xsd:string .
+
+icd10:E10354 a owl:Class ;
+	rdfs:subClassOf icd10:E1035 ;
+	umls:cui """C4268049"""^^xsd:string .
+
+icd10:E10359 a owl:Class ;
+	rdfs:subClassOf icd10:E1035 ;
+	umls:cui """C2874043"""^^xsd:string .
+
+icd10:E1011 a owl:Class ;
+	rdfs:subClassOf icd10:E101 ;
+	umls:cui """C0836988"""^^xsd:string .
+
+icd10:E1010 a owl:Class ;
+	rdfs:subClassOf icd10:E101 ;
+	umls:cui """C0836987"""^^xsd:string .
+
+icd10:E103541 a owl:Class ;
+	rdfs:subClassOf icd10:E10354 ;
+	umls:cui """C4268050"""^^xsd:string .
+
+icd10:E103542 a owl:Class ;
+	rdfs:subClassOf icd10:E10354 ;
+	umls:cui """C4268051"""^^xsd:string .
+
+icd10:E103543 a owl:Class ;
+	rdfs:subClassOf icd10:E10354 ;
+	umls:cui """C4268052"""^^xsd:string .
+
+icd10:E1064 a owl:Class ;
+	rdfs:subClassOf icd10:E106 ;
+	umls:cui """C0837018"""^^xsd:string .
+
+icd10:E1061 a owl:Class ;
+	rdfs:subClassOf icd10:E106 ;
+	umls:cui """C2874055"""^^xsd:string .
+
+icd10:E1062 a owl:Class ;
+	rdfs:subClassOf icd10:E106 ;
+	umls:cui """C2874059"""^^xsd:string .
+
+icd10:E1069 a owl:Class ;
+	rdfs:subClassOf icd10:E106 ;
+	umls:cui """C0342261"""^^xsd:string .
+
+icd10:E103512 a owl:Class ;
+	rdfs:subClassOf icd10:E10351 ;
+	umls:cui """C4268036"""^^xsd:string .
+
+icd10:E103511 a owl:Class ;
+	rdfs:subClassOf icd10:E10351 ;
+	umls:cui """C4268035"""^^xsd:string .
+
+icd10:E103519 a owl:Class ;
+	rdfs:subClassOf icd10:E10351 ;
+	umls:cui """C4268038"""^^xsd:string .
+
+icd10:E10630 a owl:Class ;
+	rdfs:subClassOf icd10:E1063 ;
+	umls:cui """C2874066"""^^xsd:string .
+
+icd10:E10638 a owl:Class ;
+	rdfs:subClassOf icd10:E1063 ;
+	umls:cui """C2874067"""^^xsd:string .
+
+icd10:E103559 a owl:Class ;
+	rdfs:subClassOf icd10:E10355 ;
+	umls:cui """C4268058"""^^xsd:string .
+
+icd10:E103553 a owl:Class ;
+	rdfs:subClassOf icd10:E10355 ;
+	umls:cui """C4268057"""^^xsd:string .
+
+icd10:E103492 a owl:Class ;
+	rdfs:subClassOf icd10:E10349 ;
+	umls:cui """C4268032"""^^xsd:string .
+
+icd10:E103493 a owl:Class ;
+	rdfs:subClassOf icd10:E10349 ;
+	umls:cui """C4268033"""^^xsd:string .
+
+icd10:E103399 a owl:Class ;
+	rdfs:subClassOf icd10:E10339 ;
+	umls:cui """C4268026"""^^xsd:string .
+
+icd10:E103392 a owl:Class ;
+	rdfs:subClassOf icd10:E10339 ;
+	umls:cui """C4268024"""^^xsd:string .
+
+icd10:E10321 a owl:Class ;
+	rdfs:subClassOf icd10:E1032 ;
+	umls:cui """C2874033"""^^xsd:string .
+
+icd10:E10329 a owl:Class ;
+	rdfs:subClassOf icd10:E1032 ;
+	umls:cui """C2874034"""^^xsd:string .
+
+icd10:E113399 a owl:Class ;
+	rdfs:subClassOf icd10:E11339 ;
+	umls:cui """C4268083"""^^xsd:string .
+
+icd10:E113599 a owl:Class ;
+	rdfs:subClassOf icd10:E11359 ;
+	umls:cui """C4268119"""^^xsd:string .
+
+icd10:E113312 a owl:Class ;
+	rdfs:subClassOf icd10:E11331 ;
+	umls:cui """C4268077"""^^xsd:string .
+
+icd10:E113313 a owl:Class ;
+	rdfs:subClassOf icd10:E11331 ;
+	umls:cui """C4268078"""^^xsd:string .
+
+icd10:E113311 a owl:Class ;
+	rdfs:subClassOf icd10:E11331 ;
+	umls:cui """C4268076"""^^xsd:string .
+
+icd10:E113391 a owl:Class ;
+	rdfs:subClassOf icd10:E11339 ;
+	umls:cui """C4268080"""^^xsd:string .
+
+icd10:E113493 a owl:Class ;
+	rdfs:subClassOf icd10:E11349 ;
+	umls:cui """C4268090"""^^xsd:string .
+
+icd10:E113492 a owl:Class ;
+	rdfs:subClassOf icd10:E11349 ;
+	umls:cui """C4268089"""^^xsd:string .
+
+icd10:E113499 a owl:Class ;
+	rdfs:subClassOf icd10:E11349 ;
+	umls:cui """C4268091"""^^xsd:string .
+
+icd10:E113319 a owl:Class ;
+	rdfs:subClassOf icd10:E11331 ;
+	umls:cui """C4268079"""^^xsd:string .
+
+icd10:E113511 a owl:Class ;
+	rdfs:subClassOf icd10:E11351 ;
+	umls:cui """C4268092"""^^xsd:string .
+
+icd10:E1165 a owl:Class ;
+	rdfs:subClassOf icd10:E116 ;
+	umls:cui """C2874123"""^^xsd:string .
+
+icd10:E1164 a owl:Class ;
+	rdfs:subClassOf icd10:E116 ;
+	umls:cui """C0837054"""^^xsd:string .
+
+icd10:E1163 a owl:Class ;
+	rdfs:subClassOf icd10:E116 ;
+	umls:cui """C2874118"""^^xsd:string .
+
+icd10:E1162 a owl:Class ;
+	rdfs:subClassOf icd10:E116 ;
+	umls:cui """C2874112"""^^xsd:string .
+
+icd10:E1161 a owl:Class ;
+	rdfs:subClassOf icd10:E116 ;
+	umls:cui """C2874108"""^^xsd:string .
+
+icd10:E1169 a owl:Class ;
+	rdfs:subClassOf icd10:E116 ;
+	umls:cui """C0342262"""^^xsd:string .
+
+icd10:E113523 a owl:Class ;
+	rdfs:subClassOf icd10:E11352 ;
+	umls:cui """C4268099"""^^xsd:string .
+
+icd10:E113522 a owl:Class ;
+	rdfs:subClassOf icd10:E11352 ;
+	umls:cui """C4268098"""^^xsd:string .
+
+icd10:E1137X9 a owl:Class ;
+	rdfs:subClassOf icd10:E1137 ;
+	umls:cui """C4268124"""^^xsd:string .
+
+icd10:E1137X1 a owl:Class ;
+	rdfs:subClassOf icd10:E1137 ;
+	umls:cui """C4268121"""^^xsd:string .
+
+icd10:E1137X3 a owl:Class ;
+	rdfs:subClassOf icd10:E1137 ;
+	umls:cui """C4268123"""^^xsd:string .
+
+icd10:E11610 a owl:Class ;
+	rdfs:subClassOf icd10:E1161 ;
+	umls:cui """C2874109"""^^xsd:string .
+
+icd10:E11618 a owl:Class ;
+	rdfs:subClassOf icd10:E1161 ;
+	umls:cui """C2874111"""^^xsd:string .
+
+icd10:E1151 a owl:Class ;
+	rdfs:subClassOf icd10:E115 ;
+	umls:cui """C2874104"""^^xsd:string .
+
+icd10:E11649 a owl:Class ;
+	rdfs:subClassOf icd10:E1164 ;
+	umls:cui """C2874122"""^^xsd:string .
+
+icd10:E11641 a owl:Class ;
+	rdfs:subClassOf icd10:E1164 ;
+	umls:cui """C2874121"""^^xsd:string .
+
+icd10:E11311 a owl:Class ;
+	rdfs:subClassOf icd10:E1131 ;
+	umls:cui """C2874081"""^^xsd:string .
+
+icd10:E11319 a owl:Class ;
+	rdfs:subClassOf icd10:E1131 ;
+	umls:cui """C2874082"""^^xsd:string .
+
+icd10:E118 a owl:Class ;
+	rdfs:subClassOf icd10:E11 ;
+	umls:cui """C1299614"""^^xsd:string .
+
+icd10:E1122 a owl:Class ;
+		rdfs:subClassOf icd10:E112 ;
+	umls:cui """C2874077"""^^xsd:string .
+
+icd10:E113542 a owl:Class ;
+	rdfs:subClassOf icd10:E11354 ;
+	umls:cui """C4268108"""^^xsd:string .
+
+icd10:E113212 a owl:Class ;
+	rdfs:subClassOf icd10:E11321 ;
+	umls:cui """C4268069"""^^xsd:string .
+
+icd10:E11621 a owl:Class ;
+	rdfs:subClassOf icd10:E1162 ;
+	umls:cui """C2874115"""^^xsd:string .
+
+icd10:E113512 a owl:Class ;
+	rdfs:subClassOf icd10:E11351 ;
+	umls:cui """C4268093"""^^xsd:string .
+
+icd10:E113513 a owl:Class ;
+	rdfs:subClassOf icd10:E11351 ;
+	umls:cui """C4268094"""^^xsd:string .
+
+icd10:E113393 a owl:Class ;
+	rdfs:subClassOf icd10:E11339 ;
+	umls:cui """C4268082"""^^xsd:string .
+
+icd10:E113213 a owl:Class ;
+	rdfs:subClassOf icd10:E11321 ;
+	umls:cui """C4268070"""^^xsd:string .
+
+icd10:E113211 a owl:Class ;
+	rdfs:subClassOf icd10:E11321 ;
+	umls:cui """C4268068"""^^xsd:string .
+
+icd10:E113219 a owl:Class ;
+	rdfs:subClassOf icd10:E11321 ;
+	umls:cui """C4268071"""^^xsd:string .
+
+icd10:E1137X2 a owl:Class ;
+	rdfs:subClassOf icd10:E1137 ;
+	umls:cui """C4268122"""^^xsd:string .
+
+icd10:E1149 a owl:Class ;
+	rdfs:subClassOf icd10:E114 ;
+	umls:cui """C2874102"""^^xsd:string .
+
+icd10:E1144 a owl:Class ;
+	rdfs:subClassOf icd10:E114 ;
+	umls:cui """C2874101"""^^xsd:string .
+
+icd10:E1141 a owl:Class ;
+	rdfs:subClassOf icd10:E114 ;
+	umls:cui """C0837043"""^^xsd:string .
+
+icd10:E1140 a owl:Class ;
+	rdfs:subClassOf icd10:E114 ;
+	umls:cui """C2874097"""^^xsd:string .
+
+icd10:E1143 a owl:Class ;
+	rdfs:subClassOf icd10:E114 ;
+	umls:cui """C2874100"""^^xsd:string .
+
+icd10:E1142 a owl:Class ;
+	rdfs:subClassOf icd10:E114 ;
+	umls:cui """C2874098"""^^xsd:string .
+
+icd10:E1129 a owl:Class ;
+		rdfs:subClassOf icd10:E112 ;
+	umls:cui """C2874079"""^^xsd:string .
+
+icd10:E1121 a owl:Class ;
+	rdfs:subClassOf icd10:E112 ;
+	umls:cui """C2874075"""^^xsd:string .
+
+icd10:E11339 a owl:Class ;
+	rdfs:subClassOf icd10:E1133 ;
+	umls:cui """C2874089"""^^xsd:string .
+
+icd10:E113521 a owl:Class ;
+	rdfs:subClassOf icd10:E11352 ;
+	umls:cui """C4268097"""^^xsd:string .
+
+icd10:E113392 a owl:Class ;
+	rdfs:subClassOf icd10:E11339 ;
+	umls:cui """C4268081"""^^xsd:string .
+
+icd10:E113532 a owl:Class ;
+	rdfs:subClassOf icd10:E11353 ;
+	umls:cui """C4268103"""^^xsd:string .
+
+icd10:E113533 a owl:Class ;
+	rdfs:subClassOf icd10:E11353 ;
+	umls:cui """C4268104"""^^xsd:string .
+
+icd10:E113531 a owl:Class ;
+	rdfs:subClassOf icd10:E11353 ;
+	umls:cui """C4268102"""^^xsd:string .
+
+icd10:E1139 a owl:Class ;
+	rdfs:subClassOf icd10:E113 ;
+	umls:cui """C2874096"""^^xsd:string .
+
+icd10:E1134 a owl:Class ;
+	rdfs:subClassOf icd10:E113 ;
+	umls:cui """C2874090"""^^xsd:string .
+
+icd10:E1135 a owl:Class ;
+	rdfs:subClassOf icd10:E113 ;
+	umls:cui """C2874093"""^^xsd:string .
+
+icd10:E1136 a owl:Class ;
+	rdfs:subClassOf icd10:E113 ;
+	umls:cui """C0837040"""^^xsd:string .
+
+icd10:E1137 a owl:Class ;
+	rdfs:subClassOf icd10:E113 ;
+	umls:cui """C4268120"""^^xsd:string .
+
+icd10:E1131 a owl:Class ;
+	rdfs:subClassOf icd10:E113 ;
+	umls:cui """C2874080"""^^xsd:string .
+
+icd10:E1132 a owl:Class ;
+	rdfs:subClassOf icd10:E113 ;
+	umls:cui """C2874083"""^^xsd:string .
+
+icd10:E1133 a owl:Class ;
+	rdfs:subClassOf icd10:E113 ;
+	umls:cui """C2874087"""^^xsd:string .
+
+icd10:E113419 a owl:Class ;
+	rdfs:subClassOf icd10:E11341 ;
+	umls:cui """C4268087"""^^xsd:string .
+
+icd10:E113411 a owl:Class ;
+	rdfs:subClassOf icd10:E11341 ;
+	umls:cui """C4268084"""^^xsd:string .
+
+icd10:E113591 a owl:Class ;
+	rdfs:subClassOf icd10:E11359 ;
+	umls:cui """C4268116"""^^xsd:string .
+
+icd10:E113592 a owl:Class ;
+	rdfs:subClassOf icd10:E11359 ;
+	umls:cui """C4268117"""^^xsd:string .
+
+icd10:E113593 a owl:Class ;
+	rdfs:subClassOf icd10:E11359 ;
+	umls:cui """C4268118"""^^xsd:string .
+
+icd10:E113491 a owl:Class ;
+	rdfs:subClassOf icd10:E11349 ;
+	umls:cui """C4268088"""^^xsd:string .
+
+icd10:E11359 a owl:Class ;
+	rdfs:subClassOf icd10:E1135 ;
+	umls:cui """C2874095"""^^xsd:string .
+
+icd10:E11352 a owl:Class ;
+	rdfs:subClassOf icd10:E1135 ;
+	umls:cui """C4268096"""^^xsd:string .
+
+icd10:E11353 a owl:Class ;
+	rdfs:subClassOf icd10:E1135 ;
+	umls:cui """C4268101"""^^xsd:string .
+
+icd10:E11351 a owl:Class ;
+	rdfs:subClassOf icd10:E1135 ;
+	umls:cui """C2874094"""^^xsd:string .
+
+icd10:E11355 a owl:Class ;
+	rdfs:subClassOf icd10:E1135 ;
+	umls:cui """C4268111"""^^xsd:string .
+
+icd10:E113539 a owl:Class ;
+	rdfs:subClassOf icd10:E11353 ;
+	umls:cui """C4268105"""^^xsd:string .
+
+icd10:E113543 a owl:Class ;
+	rdfs:subClassOf icd10:E11354 ;
+	umls:cui """C4268109"""^^xsd:string .
+
+icd10:E113541 a owl:Class ;
+	rdfs:subClassOf icd10:E11354 ;
+	umls:cui """C4268107"""^^xsd:string .
+
+icd10:E113549 a owl:Class ;
+	rdfs:subClassOf icd10:E11354 ;
+	umls:cui """C4268110"""^^xsd:string .
+
+icd10:E1159 a owl:Class ;
+	rdfs:subClassOf icd10:E115 ;
+	umls:cui """C2874107"""^^xsd:string .
+
+icd10:E1152 a owl:Class ;
+	rdfs:subClassOf icd10:E115 ;
+	umls:cui """C2874105"""^^xsd:string .
+
+icd10:E110 a owl:Class ;
+	rdfs:subClassOf icd10:E11 ;
+	umls:cui """C0851219"""^^xsd:string .
+
+icd10:E11628 a owl:Class ;
+	rdfs:subClassOf icd10:E1162 ;
+	umls:cui """C2874117"""^^xsd:string .
+
+icd10:E11622 a owl:Class ;
+	rdfs:subClassOf icd10:E1162 ;
+	umls:cui """C2874116"""^^xsd:string .
+
+icd10:E11620 a owl:Class ;
+	rdfs:subClassOf icd10:E1162 ;
+	umls:cui """C2874114"""^^xsd:string .
+
+icd10:E11354 a owl:Class ;
+	rdfs:subClassOf icd10:E1135 ;
+	umls:cui """C4268106"""^^xsd:string .
+
+icd10:E11331 a owl:Class ;
+	rdfs:subClassOf icd10:E1133 ;
+	umls:cui """C2874088"""^^xsd:string .
+
+icd10:E113413 a owl:Class ;
+	rdfs:subClassOf icd10:E11341 ;
+	umls:cui """C4268086"""^^xsd:string .
+
+icd10:E113412 a owl:Class ;
+	rdfs:subClassOf icd10:E11341 ;
+	umls:cui """C4268085"""^^xsd:string .
+
+icd10:E1101 a owl:Class ;
+		rdfs:subClassOf icd10:E110 ;
+	umls:cui """C0837022"""^^xsd:string .
+
+icd10:E1100 a owl:Class ;
+		rdfs:subClassOf icd10:E110 ;
+	umls:cui """C0837021"""^^xsd:string .
+
+icd10:E11349 a owl:Class ;
+	rdfs:subClassOf icd10:E1134 ;
+	umls:cui """C2874092"""^^xsd:string .
+
+icd10:E11341 a owl:Class ;
+	rdfs:subClassOf icd10:E1134 ;
+	umls:cui """C2874091"""^^xsd:string .
+
+icd10:E113529 a owl:Class ;
+	rdfs:subClassOf icd10:E11352 ;
+	umls:cui """C4268100"""^^xsd:string .
+
+icd10:E113551 a owl:Class ;
+	rdfs:subClassOf icd10:E11355 ;
+	umls:cui """C4268112"""^^xsd:string .
+
+icd10:E113552 a owl:Class ;
+	rdfs:subClassOf icd10:E11355 ;
+	umls:cui """C4268113"""^^xsd:string .
+
+icd10:E113553 a owl:Class ;
+	rdfs:subClassOf icd10:E11355 ;
+	umls:cui """C4268114"""^^xsd:string .
+
+icd10:E113559 a owl:Class ;
+	rdfs:subClassOf icd10:E11355 ;
+	umls:cui """C4268115"""^^xsd:string .
+
+icd10:E119 a owl:Class ;
+	rdfs:subClassOf icd10:E11 ;
+	umls:cui """C0494290"""^^xsd:string .
+
+icd10:E112 a owl:Class ;
+	rdfs:subClassOf icd10:E11 ;
+	umls:cui """C2874072"""^^xsd:string .
+
+icd10:E113 a owl:Class ;
+	rdfs:subClassOf icd10:E11 ;
+	umls:cui """C0348919"""^^xsd:string .
+
+icd10:E114 a owl:Class ;
+	rdfs:subClassOf icd10:E11 ;
+	umls:cui """C0348920"""^^xsd:string .
+
+icd10:E115 a owl:Class ;
+	rdfs:subClassOf icd10:E11 ;
+	umls:cui """C2874103"""^^xsd:string .
+
+icd10:E116 a owl:Class ;
+	rdfs:subClassOf icd10:E11 ;
+	umls:cui """C0342262"""^^xsd:string .
+
+icd10:E113519 a owl:Class ;
+	rdfs:subClassOf icd10:E11351 ;
+	umls:cui """C4268095"""^^xsd:string .
+
+icd10:E11630 a owl:Class ;
+	rdfs:subClassOf icd10:E1163 ;
+	umls:cui """C2874119"""^^xsd:string .
+
+icd10:E11638 a owl:Class ;
+	rdfs:subClassOf icd10:E1163 ;
+	umls:cui """C2874120"""^^xsd:string .
+
+icd10:E11329 a owl:Class ;
+	rdfs:subClassOf icd10:E1132 ;
+	umls:cui """C2874086"""^^xsd:string .
+
+icd10:E11321 a owl:Class ;
+	rdfs:subClassOf icd10:E1132 ;
+	umls:cui """C2874085"""^^xsd:string .
+
+icd10:E113299 a owl:Class ;
+	rdfs:subClassOf icd10:E11329 ;
+	umls:cui """C4268075"""^^xsd:string .
+
+icd10:E113293 a owl:Class ;
+	rdfs:subClassOf icd10:E11329 ;
+	umls:cui """C4268074"""^^xsd:string .
+
+icd10:E113292 a owl:Class ;
+	rdfs:subClassOf icd10:E11329 ;
+	umls:cui """C4268073"""^^xsd:string .
+
+icd10:E113291 a owl:Class ;
+	rdfs:subClassOf icd10:E11329 ;
+	umls:cui """C4268072"""^^xsd:string .
+
+icd10:E11 a owl:Class ;
+	rdfs:subClassOf icd10:E08-E13 ;
+	umls:cui """C0011860"""^^xsd:string .
+
+icd10:E10 a owl:Class ;
+	rdfs:subClassOf icd10:E08-E13 ;
+	umls:cui """C0011854"""^^xsd:string .
 
 
 ###  http://www.hdruk.ac.uk/sprint/graph/Error
-:Error rdf:type owl:Class .
+hdr:Error rdf:type owl:Class .
 
 
 ###  http://www.hdruk.ac.uk/sprint/graph/Patient
-:Patient rdf:type owl:Class .
+hdr:Patient rdf:type owl:Class .
 
-### Sample ICD10 concepts
-:E10 rdf:type owl:Class .
-:E101 
-	rdf:type owl:Class ;
-	rdfs:subClassOf :E10 .
-:E105 
-	rdf:type owl:Class ;
-	rdfs:subClassOf :E10 .	
-:E109 
-	rdf:type owl:Class ;
-	rdfs:subClassOf :E10 .
+hdr:Bleeding rdf:type owl:Class .
 
-:E11 rdf:type owl:Class .
-:E111 
-	rdf:type owl:Class ;
-	rdfs:subClassOf :E11 .
-:E115 
-	rdf:type owl:Class ;
-	rdfs:subClassOf :E11 .
+hdr:DrugInferredBleeding rdf:type owl:Class ;
+	rdfs:subClassOf hdr:Bleeding .
 
-:Bleeding rdf:type owl:Class .	
-:DrugInferredBleeding rdf:type owl:Class ; 
-	rdfs:subClassOf :Bleeding .
+hdr:PotentialCodingErrorPatient rdf:type owl:Class .
 
-:PotentialCodingErrorPatient rdf:type owl:Class .
-:DiabetesConflictPatient rdf:type owl:Class ;
-	rdfs:subClassOf :PotentialCodingErrorPatient .
-	
-:PotentialCodingErrorPatient rdf:type owl:Class .
-:DiabetesConflictPatient rdfs:subClassOf :PotentialCodingErrorPatient .
+hdr:DiabetesConflictPatient rdf:type owl:Class ;
+	rdfs:subClassOf hdr:PotentialCodingErrorPatient .
+
+hdr:PotentialCodingErrorPatient rdf:type owl:Class .
+hdr:DiabetesConflictPatient rdfs:subClassOf hdr:PotentialCodingErrorPatient .
 
 ###  http://www.hdruk.ac.uk/sprint/graph/hasRecord
-:hasRecord rdf:type owl:ObjectProperty ;
-           owl:inverseOf :recordOf ;
+hdr:hasRecord rdf:type owl:ObjectProperty ;
+           owl:inverseOf hdr:recordOf ;
            rdf:type owl:InverseFunctionalProperty ;
-           rdfs:domain :Patient ;
-           rdfs:range :Record .
+           rdfs:domain hdr:Patient ;
+           rdfs:range hdr:Record .
 
-:hasICD10Code rdf:type owl:DatatypeProperty ;
-			rdfs:domain :Patient .
-			
-:drugName rdf:type owl:DatatypeProperty ;
-			rdfs:domain :Patient .
-			
-:hasPrescription rdf:type owl:ObjectProperty ;
-           rdfs:domain :Patient .
+hdr:hasICD10Code rdf:type owl:DatatypeProperty ;
+			rdfs:domain hdr:Patient .
 
-:hasPrescription rdf:type owl:ObjectProperty .
-:prescribedDrug rdf:type owl:ObjectProperty .
+hdr:drugName rdf:type owl:DatatypeProperty ;
+			rdfs:domain hdr:Patient .
+
+hdr:hasPrescription rdf:type owl:ObjectProperty ;
+           rdfs:domain hdr:Patient .
+
+hdr:hasPrescription rdf:type owl:ObjectProperty .
+hdr:prescribedDrug rdf:type owl:ObjectProperty .
 
