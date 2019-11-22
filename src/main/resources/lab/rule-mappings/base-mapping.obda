@@ -7,10 +7,12 @@ xml:		http://www.w3.org/XML/1998/namespace
 xsd:		http://www.w3.org/2001/XMLSchema#
 obda:		https://w3id.org/obda/vocabulary#
 rdfs:		http://www.w3.org/2000/01/rdf-schema#
+icd10:      http://www.hdruk.ac.uk/sprint/graph/ontology/ICD10/
+icd9:      http://www.hdruk.ac.uk/sprint/graph/ontology/ICD9/
 
 [MappingDeclaration] @collection [[
 mappingId	conditions
-target		:patient/{CHI} a onto:Patient ; a onto:{cleanCondition} ; onto:hasDiag :diag/{CHI}_{cleanCondition}_{AdmissionDate}; onto:hasICD10Code {MainCondition} . :diag/{CHI}_{cleanCondition}_{AdmissionDate} a onto:ICD/{MainCondition}; onto:hasCondition onto:ICD/{MainCondition} ; onto:admissionDate {AdmissionDate}.
+target		:patient/{CHI} a onto:Patient ; a icd10:{cleanCondition} ; onto:hasDiag :diag/{CHI}_{cleanCondition}_{AdmissionDate}; onto:hasICD10Code {MainCondition} . :diag/{CHI}_{cleanCondition}_{AdmissionDate} a onto:ICD/{MainCondition}; onto:hasCondition onto:ICD/{MainCondition} ; onto:admissionDate {AdmissionDate}.
 source		select *, replace(MainCondition, ' ', '') cleanCondition from HospitalAdmissions
 
 mappingId	druguse
