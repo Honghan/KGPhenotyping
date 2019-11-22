@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Knowledge Driven Phenotyping - Graph based data federation</title>
+    <link href="js/libs/sweetalert2.min.css" rel="stylesheet" />
+    <script src="js/libs/bluebird.min.js"></script>
+    <script src="js/libs/jquery.min.3.1.0.js"></script>
+    <script src="js/libs/d3.v4.min.js"></script>
+    <script src="js/libs/elasticsearch.jquery.js"></script>
+    <script src="js/libs/jquery.json-2.3.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/libs/sweetalert2.min.js"></script>
+    <!--<script src="js/icd10-umls.js"></script>-->
+    <script src="js/main.js?v=0.2"></script>
+</head>
+<link type="text/css" href="css/main.css" rel="stylesheet"/>
+<body>
+    <div id="mainDiv">
+        <div class="banner">
+            <div><img src="./assets/hdrlogo.svg" width="120"/> <img src="./assets/edin.png" height="50" style="margin-left:16px"/></div>
+            <div class="projectName"> Knowledge Driven Phenotyping </div>
+        </div>
+        <nav id="primaryNav"></nav>
+        <div style="display:block;width: 100%;font-size:200%;margin-bottom:30px;text-align: center">&nbsp; </div>
+        <div id="searchDiv">
+            <!--<label for="chkCohort">Filter by patients</label><input type="checkbox" id="chkCohort"/>-->
+            <!--<label for="chkValidDoc">Filter by docs</label><input type="checkbox" id="chkValidDoc"/>-->
+            <!--<br/>-->
+            <div class="tabContainer">
+                <div class="tabHeaders">
+                <!--<a class="tabTitle" >CONCEPT</a>-->
+                <a class="tabTitle tabSelected" >STUDY</a>
+                </div>
+                <span id="tabEntity" class="semTab">
+                    <span id="styListDiseaseListDiseaseSpan">Study list: <select id="listStudies"></select></span>
+                    <span id="styListSpan"><textarea id="ruleT"></textarea></span>
+                    <span id="btnMoreSTY">more concepts</span>
+                </span>
+            </div>
+        </div>
+        <div id="patientDataContainer">
+            <div class="tabHeaders">
+                <a class="tabView tabSelected" >RULES</a>
+                <a class="tabView" >QUERY</a>
+            </div>
+            <div id="rulesView" class="viewContent">
+
+                    <div id="rulesContainer" style="display:block;">
+                    </div>
+
+
+            </div><!-- end of rulesView -->
+
+            <div id="queryView" class="viewContent">
+                <div class="clsHPOTitle">SPARQL</div>
+                <textarea id="txtQuery">
+ SELECT DISTINCT *
+ WHERE {
+
+
+
+ }</textarea>
+                <br/>
+                <button id="btnQuery">submit</button>
+
+                <div class="clsHPOTitle" style="margin-top:30px">RESULT</div>
+                <div id="divQResult"></div>
+            </div>
+
+
+        </div> <!--end of patientDataContainer-->
+    </div>
+
+<div id="chartDivOverlay" class="overlay">
+    <div id="chartDiv" class="popup">
+    </div>
+</div>
+
+<div id="sumRowTemplate" style="display:none">
+    <div class="sumRow dataRow">
+        <div class="sumCol"><span class="patientId">-</span></div>
+        <div class="sumCol"><span class="allM sum">-</span></div>
+        <div class="sumCol"><span class="posM sum">-</span></div>
+        <div class="sumCol"><span class="hisM sum">-</span></div>
+        <div class="sumCol"><span class="negM sum">-</span></div>
+        <div class="sumCol"><span class="otherM sum">-</span></div>
+        <div class="sumCol"><span class="ruledM sum">-</span></div>
+    </div>
+</div>
+<div id="pageCtrlTemplate" style="display:none">
+    <span class="clsPrev">&lt; prev</span> <span class="clsPageInfo">1/1</span> <span class="clsNext">next &gt;</span>
+</div>
+</body>
+</html>
