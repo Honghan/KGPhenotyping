@@ -99,10 +99,7 @@ public class OntologyPhenotyping {
 	    _obdaFile = getMandatoryStringConfig(config, "OBDA_FILE");
 	    _ontologyFile = getMandatoryStringConfig(config, "ONTOLOGY_FILE");
 	    _dbPropertyFile = getMandatoryStringConfig(config, "DB_PROPERTY_FILE");
-	    _queryTemplateFile = getMandatoryStringConfig(config, "QUERY_TEMPLATE");	    
-	    
-	    // initialise studyRuleProcessor
-	    ruleProcessor = new StudyRuleProcessor(_obdaFile, _ontologyFile, _dbPropertyFile, _queryTemplateFile);
+	    _queryTemplateFile = getMandatoryStringConfig(config, "QUERY_TEMPLATE");
 	}
 	
 	/**
@@ -131,20 +128,24 @@ public class OntologyPhenotyping {
 	 * @throws SWRLBuiltInException
 	 */
 	public void createUpdateStudy(String studyName, String ruleJSON) throws IOException, JsonIOException, JsonSyntaxException, OWLOntologyCreationException, SWRLParseException, SWRLBuiltInException {
+		if (ruleProcessor == null){
+			// initialise studyRuleProcessor
+			ruleProcessor = new StudyRuleProcessor(_obdaFile, _ontologyFile, _dbPropertyFile, _queryTemplateFile);
+		}
+
 		String studyFolder = _studiesFolder + "/" + studyName;
 		File directory = new File(studyFolder);
 	    if (! directory.exists()){
 	    	_logger.info(String.format("study folder [%s] not found, creating...", studyFolder));
 	        directory.mkdir();
 	    }
-	    	    
-	    File ruleFile = new File(studyFolder + "/" + "rules.json");
-	    FileUtils.writeStringToFile(ruleFile, ruleJSON);
 	    
 	    String studyOBDAFile = studyFolder + "/" + "generated.obda";
-	    if (ruleJSON == null || ruleJSON.length() == 0)
+	    if (ruleJSON == null || ruleJSON.trim().length() == 0)
 	    	FileUtils.copyFile(new File(_obdaFile), new File(studyOBDAFile));
 	    else {
+			File ruleFile = new File(studyFolder + "/" + "rules.json");
+			FileUtils.writeStringToFile(ruleFile, ruleJSON);
 	    	ruleProcessor.translateRules(ruleFile.getAbsolutePath(), _obdaFile, studyOBDAFile);
 	    }	    
 	}
@@ -154,19 +155,21 @@ public class OntologyPhenotyping {
 	 * @return List of studies where each study is a JSON String 
 	 */
 	public List<String> listStudy() throws IOException {
-                ArrayList<String> result = new ArrayList<String>(); 
-                File directory = new File(_studiesFolder);
-                if (! directory.exists()){
+		ArrayList<String> result = new ArrayList<String>();
+		File directory = new File(_studiesFolder);
+		if (! directory.exists()){
 			return result;
-                }
-                File[] dirList = directory.listFiles();
-	        for (File dir: dirList) {
+		}
+		File[] dirList = directory.listFiles();
+		for (File dir: dirList) {
 			File rulesFile = new File(dir.getAbsolutePath()+"/rules.json");
 			if (rulesFile.exists()){
 				String rules = new String (Files.readAllBytes(Paths.get(rulesFile.getPath())));
-	 	                result.add(new String("{\"name\":\""+dir.getName()+"\",\"rules\":"+rules+"}"));
+				result.add(new String("{\"name\":\""+dir.getName()+"\",\"rules\":"+rules+"}"));
+			}else{
+				result.add(new String("{\"name\":\""+dir.getName()+"\",\"rules\":{}}"));
 			}
-	        }
+		}
 		return result;
 	}
 
@@ -201,6 +204,7 @@ public class OntologyPhenotyping {
 		OntopOWLReasoner reasoner = null;
 		OntopOWLConnection conn = null;
 		OntopOWLStatement st = null;
+		_logger.info("querying [" + sparqlQuery + "], studyOBDAFile: " + studyOBDAFile);
 		try{
 			reasoner = factory.createReasoner(ontopConfig);
 			conn = reasoner.getConnection();
