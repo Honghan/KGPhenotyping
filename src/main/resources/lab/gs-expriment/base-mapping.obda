@@ -13,12 +13,8 @@ icd10:      http://www.hdruk.ac.uk/sprint/graph/ontology/ICD10/
 
 [MappingDeclaration] @collection [[
 mappingId	conditions
-target		:patient/{id} a onto:Patient ; onto:hasDiag :diag/{CHI}_{cleanCondition}_{AdmissionDate}; onto:hasICD10Code {c1} . :diag/{CHI}_{cleanCondition}_{dt1} a onto:ICD/{MainCondition}; onto:hasCondition onto:ICD/{c1} ; onto:admissionDate {dt1}.
+target		:patient/{id} a onto:Patient ; a icd10:{c1} ; onto:hasDiag :diag/{id}_{cleanCondition}_{dt1}; onto:hasICD10Code {c1} . :diag/{id}_{cleanCondition}_{dt1} a onto:ICD/{c1}; onto:hasCondition onto:ICD/{c1} ; onto:admissionDate {dt1}.
 source		select *, replace(replace(c1, ' ', ''), '-', 'icd9_') cleanCondition from smr.smr01
-
-mappingId	icd10mapping
-target		:patient/{id} a icd10:{c1}.
-source		select MainCondition from smr.smr01 where c1 REGEXP '[A-Z]\\d+'
 
 mappingId	druguse
 target		:patient/{CHI} onto:hasPrescription :prescription/{CHI}_{PrescribedDate} . :prescription/{CHI}_{PrescribedDate} a bnf:{BnfCode}; onto:prescribedDrug :drug/{BnfCode} ; onto:prescribedDate {PrescribedDate} . :drug/{BnfCode} onto:drugName {Name} .
