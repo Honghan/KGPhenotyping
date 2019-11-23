@@ -161,6 +161,9 @@ public class OntologyPhenotyping {
 	 */
 	void generateOBDAWhenMissing(String studyFolder) throws IOException, OWLOntologyCreationException, SWRLParseException, SWRLBuiltInException {
 		String studyOBDAFile = studyFolder + "/" + "generated.obda";
+		if (new File(studyOBDAFile).exists())
+			return;
+
 		File ruleFile = new File(studyFolder + "/" + "rules.json");
 		if (ruleFile.exists()){
 			if (ruleProcessor == null){
