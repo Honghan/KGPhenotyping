@@ -1,4 +1,4 @@
 {
 	"t1-t2-exclusive": "icd10:E11(?x) ^ icd10:E10(?x) -> DiabetesConflictPatient(?x)",
-	"glucophage-inferred-bleeding": "hasPrescription(?p, ?x) ^ prescribedDrug(?x, ?d) ^ drugName(?d, \"GLUCOPHAGE SR\") -> DrugInferredBleeding(?p)"
+	"glucophage-inferred-bleeding": "hasPrescription(?p, ?x) ^ owl:sameAs(?x, drug:0601022) -> DrugInferredBleeding(?p)"
 }
