@@ -17,8 +17,8 @@ target		:patient/{id} a onto:Patient ; a icd10:{c1} ; onto:hasDiag :diag/{id}_{c
 source		select *, replace(replace(c1, ' ', ''), '-', 'icd9_') cleanCondition from smr.smr01
 
 mappingId	druguse
-target		:patient/{CHI} onto:hasPrescription :prescription/{CHI}_{PrescribedDate} . :prescription/{CHI}_{PrescribedDate}_{BnfCode} a bnf:{BnfCode}; onto:prescribedDrug :drug/{BnfCode} ; onto:prescribedDate {PrescribedDate} . :drug/{BnfCode} onto:drugName {Name} .
-source		select id CHI, drug Name, dt PrescribedDate, bnf BnfCode from presc.presc_all
+target		:patient/{id} onto:hasPrescription :prescription/{id}_{dt} . :prescription/{id}_{dt}_{bnf} a bnf:{bnf}; onto:prescribedDrug :drug/{bnf} ; onto:prescribedDate {dt} . :drug/{bnf} onto:drugName {drug} .
+source		select * from presc.presc_all
 
 ]]
 
