@@ -14,11 +14,11 @@ volumes:
   app_data:
     driver_opts:
       type: none
-      device:
+      device: YOUR_WEBSVC_FOLDER/app
       o: bind
 
   nginx_conf:
     driver_opts:
       type: none
-      device:
+      device: YOUR_WEBSVC_FOLDER/nginx_setting
       o: bind
